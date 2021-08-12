@@ -1,24 +1,57 @@
 package org.perscholas.services;
 
-import org.perscholas.dao.ICustomerRepo;
+import lombok.extern.slf4j.Slf4j;
 import org.perscholas.dao.IVendorRepo;
-import org.perscholas.models.Customer;
 import org.perscholas.models.Vendor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
 @Service
 @Transactional
+@Slf4j
 public class VendorServices {
 
     IVendorRepo vendorRepo;
     @Autowired
     public VendorServices(IVendorRepo vendorRepo){
-                this.vendorRepo = vendorRepo;
-            }
-            public Vendor save(Vendor v){
-                return vendorRepo.save(v);
-            }
+        this.vendorRepo = vendorRepo;
+    }
+    public Vendor save(Vendor v){
+        return vendorRepo.save(v);
+    }
+    public Vendor getVendorByEmail(String email){
+        Vendor vendor = vendorRepo.getById(email);
+        log.warn(String.valueOf(vendor));
+        return vendor;
+    }
+    public List<Vendor> getAllVendors() {
+        List<Vendor> vendors = vendorRepo.findAll();
+        log.warn(String.valueOf(vendors));
+        return vendors;
+    }
 
+    public void saveVendor(Vendor vendor) {
+        vendorRepo.save(vendor);
+    }
+
+    public boolean validateVendor(Vendor vendor) {
+        Vendor newVendor = this.getVendorByEmail(vendor.getEmailAddress());
+
+        if (newVendor == null) {
+            return false;
+        }
+
+        String uPassword = newVendor.getPassword();
+
+        if (uPassword.equals(vendor.getPassword())) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
 }

@@ -13,8 +13,8 @@
   <artifactId>CaseStudySocks</artifactId>
   <version>1.0-SNAPSHOT</version>
 <!--  <packaging>war</packaging>-->
-  <name>CaseStudySocks Maven Webapp</name>
-  <description>Sock eCommerce Website</description>
+  <name>SockCase Maven Webapp</name>
+  <description>SockCase Website</description>
 
   <!-- FIXME change it to the project's website -->
 <!--  <url>http://www.example.com</url>-->
@@ -90,7 +90,7 @@
   </dependencies>
 
   <build>
-    <finalName>CaseStudySocks</finalName>
+    <finalName>SockCase</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>

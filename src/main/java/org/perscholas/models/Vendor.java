@@ -21,8 +21,6 @@ public class Vendor implements Serializable {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long vendorID;
     @NonNull
     @Column(unique = true) @NotBlank
     String emailAddress;

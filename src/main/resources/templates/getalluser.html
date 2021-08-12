@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>SockCase Homepage</title>
+    <title>SockCase - Get All Customers</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -22,21 +22,21 @@
 <!-- Responsive navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" th:href="@{/}">SockCase</a>
+        <a class="navbar-brand" th:href="@{/}">Student Management System</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <div sec:authorize="isAuthenticated()">
-                        <a class="nav-link active" aria-current="page" th:href="@{/}">Customer: <span sec:authentication="name"></span> Privileges: <span sec:authentication="principal.authorities"></span></a>
+                        <a class="nav-link active" aria-current="page" th:href="@{/}">User: <span sec:authentication="name"></span> Privileges: <span sec:authentication="principal.authorities"></span></a>
                     </div>
                 </li>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{/}">Home</a></li>
-                <li class="nav-item"><a class="nav-link" th:href="@{/customer/registercustomer}">Register New Customer</a></li>
-<!--                <div sec:authorize="isAuthenticated()">-->
-<!--                    <li class="nav-item"><a class="nav-link" th:href="@{/courses/registercourse}">Register To a Course</a></li>-->
-<!--                </div>-->
+                <li class="nav-item"><a class="nav-link" th:href="@{/customer/registerstudent}">Register New Student</a></li>
+                <div sec:authorize="isAuthenticated()">
+                    <li class="nav-item"><a class="nav-link" th:href="@{/courses/registercourse}">Register To a Course</a></li>
+                </div>
 
                 <div sec:authorize="isAnonymous()">
                     <li class="nav-item"><a class="nav-link" th:href="@{/login}">Login</a></li>
@@ -47,11 +47,11 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" th:href="@{/console/getallcustomers}">Show All Customers</a></li>
-                            <li><a class="dropdown-item" th:href="@{#}">Show All Orders</a></li>
+                            <li><a class="dropdown-item" th:href="@{/console/getallstudent}">Show All Students</a></li>
+                            <li><a class="dropdown-item" th:href="@{#}">Show All Courses</a></li>
                             <li><hr class="dropdown-divider" /></li>
-                            <li><a class="dropdown-item" th:href="@{/console/getcustomerbyemail}">Get Customers By Email</a></li>
-                            <li><a class="dropdown-item" th:href="@{#}">Get Customer Orders</a></li>
+                            <li><a class="dropdown-item" th:href="@{/console/getstudentbyid}">Get Student By Email</a></li>
+                            <li><a class="dropdown-item" th:href="@{#}">Get Student Courses</a></li>
                         </ul>
                     </li>
 
@@ -66,7 +66,7 @@
 <!-- Page content-->
 <div class="container">
     <div class="text-center mt-5">
-        <h1>index</h1>
+        <h1>Get All Student</h1>
         <h1>A Bootstrap 5 Starter Template</h1>
         <p class="lead">A complete project boilerplate built with Bootstrap</p>
         <p>Bootstrap v5.0.1</p>

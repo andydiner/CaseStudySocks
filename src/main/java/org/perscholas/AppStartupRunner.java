@@ -2,11 +2,11 @@ package org.perscholas;
 
 import lombok.extern.java.Log;
 import org.perscholas.dao.IAuthGroupRepo;
-import org.perscholas.dao.ICustomerRepo;
+import org.perscholas.dao.IUserRepo;
 import org.perscholas.dao.IImagesRepo;
 import org.perscholas.dao.IVendorRepo;
 import org.perscholas.models.AuthGroup;
-import org.perscholas.models.Customer;
+import org.perscholas.models.User;
 import org.perscholas.models.Vendor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -19,16 +19,16 @@ import javax.annotation.PostConstruct;
 @Log
 @Transactional
 public class AppStartupRunner implements CommandLineRunner {
-    ICustomerRepo customerRepo;
+    IUserRepo userRepo;
     IVendorRepo vendorRepo;
     IAuthGroupRepo authGroupRepo;
     IImagesRepo imagesRepo;
 
     @Autowired
-    public AppStartupRunner(ICustomerRepo customerRepo, IVendorRepo vendorRepo,
+    public AppStartupRunner(IUserRepo userRepo, IVendorRepo vendorRepo,
                             IAuthGroupRepo authGroupRepo){
         this.authGroupRepo = authGroupRepo;
-        this.customerRepo = customerRepo;
+        this.userRepo = userRepo;
         this.vendorRepo = vendorRepo;
     }
 
@@ -43,24 +43,25 @@ public class AppStartupRunner implements CommandLineRunner {
 //    String phoneNumber;
 //    String password;
 //    String imagePath;
-        log.info("****Adding Customers****");
+        log.info("****Adding Users****");
 
-        customerRepo.save(new Customer("andrewjdiner@gmail.com",
+        userRepo.save(new User("andrewjdiner@gmail.com",
                 "Andrew", "Diner", "4802986038",
-                "$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv."));
-        customerRepo.save(new Customer("adiner@asu.edu",
+                "password"));
+        userRepo.save(new User("adiner@asu.edu",
                 "Andrew", "Diner","4802986038",
-                "$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv."));
-        customerRepo.save(new Customer("david@gmail.com",
+                "password"));
+        userRepo.save(new User("david@gmail.com",
                 "David", "Diner", "4802986048",
-                "$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv."));
-        customerRepo.save(new Customer("Billy@gmail.com",
+                "password"));
+        userRepo.save(new User("Billy@gmail.com",
                 "Billy", "Thorton","7538983043",
                 "$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv."));
-        customerRepo.save(new Customer("randomemail@yahoo.com",
+        userRepo.save(new User("randomemail@yahoo.com",
                 "Random", "Person", "1234567890",
-                "$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv."));
-        log.info("****Customers Added****");
+                "password"));
+        //$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv.
+        log.info("****Users Added****");
 
 
         //    String emailAddress;
@@ -73,16 +74,16 @@ public class AppStartupRunner implements CommandLineRunner {
 
         vendorRepo.save(new Vendor("gary@Zoofood.com",
                 "Gary", "Diner", "7608352012",
-                "$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv."));
+                "password"));
         vendorRepo.save(new Vendor("nancy@gmail.com",
                 "Nancy", "Diner", "8385234021",
-                "$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv."));
+                "password"));
         vendorRepo.save(new Vendor("jimminy@cricket.com",
                 "Jimminy", "Cricket", "1234567890",
-                "$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv."));
+                "password"));
         vendorRepo.save(new Vendor("alice@wonderland.com",
                 "Alice", "Wonderland", "1234567890",
-                "$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv."));
+                "password"));
         log.info("****Vendors Added****");
 
 
