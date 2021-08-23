@@ -2,27 +2,32 @@ package org.perscholas.models;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.criterion.Order;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 //database
 @Entity
 //springboot
 @Component
-public class Customer implements Serializable {
+@Getter
+@Setter
+@ToString(onlyExplicitlyIncluded = true)
+
+public class User implements Serializable {
     static final long serialVersionUID = 6381462249347345007L;
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long customerID;
     @NonNull
     @Column(unique = true) @NotBlank
     String emailAddress;
@@ -34,5 +39,9 @@ public class Customer implements Serializable {
     String phoneNumber;
     @NonNull @NotBlank
     String password;
+    String role;
     String imagePath;
+
+    //@ManyToMany
+   // List<Order> orders;
 }
