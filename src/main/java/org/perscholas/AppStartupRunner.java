@@ -47,7 +47,8 @@ public class AppStartupRunner implements CommandLineRunner {
 
         customerRepo.save(new Customer("andrewjdiner@gmail.com",
                 "Andrew", "Diner", "4802986038",
-                "$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv."));
+                "$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSy" +
+                        "VK/voHjw9kEKv."));
         customerRepo.save(new Customer("adiner@asu.edu",
                 "Andrew", "Diner","4802986038",
                 "$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv."));
