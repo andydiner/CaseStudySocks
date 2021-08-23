@@ -49,19 +49,19 @@ public class UserController {
         return userRedirect;
     }
 
-    @GetMapping("/users/userbyemail")
+    @GetMapping("/userbyemail")
     public String getUserByEmail(Model model){
         model.addAttribute("user", new User());
         return "userbyemail";
     }
 
-    @PostMapping("/users/userbyemail")
+    @PostMapping("/userbyemail")
     public String postUserByEmail(Model model, @ModelAttribute("user") @Valid User user,
                                   BindingResult bindingResult){
         log.warn("Searching for " + user.getEmailAddress());
         user = userServices.getUserByEmail(user.getEmailAddress());
         model.addAttribute("user", user);
-
+        log.warn(user.getImagePath());
         return "userprofile";
     }
 

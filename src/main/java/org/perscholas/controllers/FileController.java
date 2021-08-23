@@ -52,6 +52,7 @@ public class FileController {
 
         fileService.uploadFile(file);
         redirectAttributes.addFlashAttribute("message", "You successfully uploaded " + file.getOriginalFilename());
+
         return "redirect:/uploadform";
     }
 

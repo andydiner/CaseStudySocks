@@ -47,19 +47,19 @@ public class AppStartupRunner implements CommandLineRunner {
 
         userRepo.save(new User("andrewjdiner@gmail.com",
                 "Andrew", "Diner", "4802986038",
-                "password"));
+                "password")).setImagePath("defaultprofile.jpg");
         userRepo.save(new User("adiner@asu.edu",
                 "Andrew", "Diner","4802986038",
-                "password"));
+                "password")).setImagePath("defaultprofile.jpg");
         userRepo.save(new User("david@gmail.com",
                 "David", "Diner", "4802986048",
-                "password"));
+                "password")).setImagePath("defaultprofile.jpg");
         userRepo.save(new User("Billy@gmail.com",
                 "Billy", "Thorton","7538983043",
-                "$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv."));
+                "$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv.")).setImagePath("defaultprofile.jpg");
         userRepo.save(new User("randomemail@yahoo.com",
                 "Random", "Person", "1234567890",
-                "password"));
+                "password")).setImagePath("webcamup.png");
         //$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv.
         log.info("****Users Added****");
 

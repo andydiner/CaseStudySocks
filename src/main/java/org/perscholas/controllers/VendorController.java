@@ -48,13 +48,13 @@ public class VendorController {
         return "redirect:/vendors";
     }
 
-    @GetMapping("/vendors/vendorbyemail")
+    @GetMapping("/vendorbyemail")
     public String getVendorByEmail(Model model){
         model.addAttribute("vendor", new Vendor());
         return "vendorbyemail";
     }
 
-    @PostMapping("/vendors/vendorbyemail")
+    @PostMapping("/vendorbyemail")
     public String postVendorByEmail(Model model, @ModelAttribute("vendor") @Valid Vendor vendor,
                                   BindingResult bindingResult){
         log.warn("Searching for " + vendor.getEmailAddress());
