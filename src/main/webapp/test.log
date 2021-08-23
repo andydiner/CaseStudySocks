@@ -22285,3 +22285,891 @@ javax.persistence.EntityNotFoundException: Unable to find org.perscholas.models.
 2021-08-23 11:28:42.113 TRACE 16748 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_2_0_] : [VARCHAR]) - [password]
 2021-08-23 11:28:42.113 TRACE 16748 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phonenum6_2_0_] : [VARCHAR]) - [4802986038]
 2021-08-23 11:28:42.114 TRACE 16748 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role7_2_0_] : [VARCHAR]) - [null]
+2021-08-23 11:44:13.132  INFO 16748 --- [Thread-6] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-08-23 11:44:13.390  INFO 16748 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-23 11:44:13.394  INFO 16748 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-08-23 11:44:13.400  INFO 16748 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-08-23 11:44:13.562  INFO 16748 --- [restartedMain] org.perscholas.CaseRunner                : Starting CaseRunner using Java 11.0.12 on DESKTOP-D44LRSK with PID 16748 (C:\Users\14802\IdeaProjects\CaseStudySocks\CaseStudySocks\target\classes started by 14802 in C:\Users\14802\IdeaProjects\CaseStudySocks\CaseStudySocks)
+2021-08-23 11:44:13.562  INFO 16748 --- [restartedMain] org.perscholas.CaseRunner                : No active profile set, falling back to default profiles: default
+2021-08-23 11:44:13.904  INFO 16748 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-23 11:44:13.927  INFO 16748 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 5 JPA repository interfaces.
+2021-08-23 11:44:14.027  INFO 16748 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-23 11:44:14.028  INFO 16748 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-23 11:44:14.028  INFO 16748 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-08-23 11:44:14.051  INFO 16748 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-23 11:44:14.051  INFO 16748 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 486 ms
+2021-08-23 11:44:14.103  INFO 16748 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-23 11:44:14.111  INFO 16748 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-08-23 11:44:14.114  INFO 16748 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-08-23 11:44:14.114  INFO 16748 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB103Dialect
+2021-08-23 11:44:14.209 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists AuthGroup
+2021-08-23 11:44:14.217 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists Customer
+2021-08-23 11:44:14.227 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists Images
+2021-08-23 11:44:14.252 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists User
+2021-08-23 11:44:14.260 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists Vendor
+2021-08-23 11:44:14.280 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table AuthGroup (
+       aID bigint not null auto_increment,
+        aAuthGroup varchar(255),
+        aUsername varchar(255),
+        primary key (aID)
+    ) engine=InnoDB
+2021-08-23 11:44:14.294 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table Customer (
+       customerID bigint not null auto_increment,
+        emailAddress varchar(255),
+        firstName varchar(255),
+        imagePath varchar(255),
+        lastName varchar(255),
+        password varchar(255),
+        phoneNumber varchar(255),
+        primary key (customerID)
+    ) engine=InnoDB
+2021-08-23 11:44:14.304 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table Images (
+       id bigint not null auto_increment,
+        imageName varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+2021-08-23 11:44:14.323 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table User (
+       emailAddress varchar(255) not null,
+        firstName varchar(255),
+        imagePath varchar(255),
+        lastName varchar(255),
+        password varchar(255),
+        phoneNumber varchar(255),
+        role varchar(255),
+        primary key (emailAddress)
+    ) engine=InnoDB
+2021-08-23 11:44:14.336 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table Vendor (
+       vendorID bigint not null auto_increment,
+        emailAddress varchar(255),
+        firstName varchar(255),
+        imagePath varchar(255),
+        lastName varchar(255),
+        password varchar(255),
+        phoneNumber varchar(255),
+        primary key (vendorID)
+    ) engine=InnoDB
+2021-08-23 11:44:14.350 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table Customer 
+       add constraint UK_41tb39yaea9sk3p5vtp55dwep unique (emailAddress)
+2021-08-23 11:44:14.375 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table Vendor 
+       add constraint UK_eskag5deck0ujyrlsjoxmi79k unique (emailAddress)
+2021-08-23 11:44:14.398  INFO 16748 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-23 11:44:14.398  INFO 16748 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-23 11:44:14.554  WARN 16748 --- [restartedMain] org.perscholas.AppStartupRunner          : StartupRunner Constructed!
+2021-08-23 11:44:14.703  INFO 16748 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-23 11:44:14.746  INFO 16748 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-08-23 11:44:14.763  INFO 16748 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-23 11:44:14.769  INFO 16748 --- [restartedMain] org.perscholas.CaseRunner                : Started CaseRunner in 1.255 seconds (JVM running for 1303.048)
+2021-08-23 11:44:14.769  INFO 16748 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-08-23 11:44:14.776  INFO 16748 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Starting Application****
+2021-08-23 11:44:14.777  INFO 16748 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Adding Customers****
+2021-08-23 11:44:14.780 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        Customer
+        (emailAddress, firstName, imagePath, lastName, password, phoneNumber) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-23 11:44:14.781 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-23 11:44:14.781 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [Andrew]
+2021-08-23 11:44:14.781 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [null]
+2021-08-23 11:44:14.781 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [Diner]
+2021-08-23 11:44:14.781 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv.]
+2021-08-23 11:44:14.781 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [4802986038]
+2021-08-23 11:44:14.794 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        Customer
+        (emailAddress, firstName, imagePath, lastName, password, phoneNumber) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-23 11:44:14.794 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [adiner@asu.edu]
+2021-08-23 11:44:14.794 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [Andrew]
+2021-08-23 11:44:14.794 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [null]
+2021-08-23 11:44:14.794 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [Diner]
+2021-08-23 11:44:14.794 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv.]
+2021-08-23 11:44:14.794 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [4802986038]
+2021-08-23 11:44:14.796 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        Customer
+        (emailAddress, firstName, imagePath, lastName, password, phoneNumber) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-23 11:44:14.796 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [david@gmail.com]
+2021-08-23 11:44:14.796 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [David]
+2021-08-23 11:44:14.796 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [null]
+2021-08-23 11:44:14.796 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [Diner]
+2021-08-23 11:44:14.796 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv.]
+2021-08-23 11:44:14.796 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [4802986048]
+2021-08-23 11:44:14.797 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        Customer
+        (emailAddress, firstName, imagePath, lastName, password, phoneNumber) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-23 11:44:14.798 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Billy@gmail.com]
+2021-08-23 11:44:14.798 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [Billy]
+2021-08-23 11:44:14.798 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [null]
+2021-08-23 11:44:14.798 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [Thorton]
+2021-08-23 11:44:14.798 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv.]
+2021-08-23 11:44:14.798 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [7538983043]
+2021-08-23 11:44:14.799 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        Customer
+        (emailAddress, firstName, imagePath, lastName, password, phoneNumber) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-23 11:44:14.799 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [randomemail@yahoo.com]
+2021-08-23 11:44:14.799 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [Random]
+2021-08-23 11:44:14.800 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [null]
+2021-08-23 11:44:14.800 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [Person]
+2021-08-23 11:44:14.800 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv.]
+2021-08-23 11:44:14.800 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [1234567890]
+2021-08-23 11:44:14.800  INFO 16748 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Customers Added****
+2021-08-23 11:44:14.800  INFO 16748 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Adding Vendors****
+2021-08-23 11:44:14.803 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        Vendor
+        (emailAddress, firstName, imagePath, lastName, password, phoneNumber) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-23 11:44:14.803 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [gary@Zoofood.com]
+2021-08-23 11:44:14.803 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [Gary]
+2021-08-23 11:44:14.803 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [null]
+2021-08-23 11:44:14.803 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [Diner]
+2021-08-23 11:44:14.803 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv.]
+2021-08-23 11:44:14.804 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [7608352012]
+2021-08-23 11:44:14.813 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        Vendor
+        (emailAddress, firstName, imagePath, lastName, password, phoneNumber) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-23 11:44:14.813 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [nancy@gmail.com]
+2021-08-23 11:44:14.813 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [Nancy]
+2021-08-23 11:44:14.813 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [null]
+2021-08-23 11:44:14.813 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [Diner]
+2021-08-23 11:44:14.813 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv.]
+2021-08-23 11:44:14.813 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [8385234021]
+2021-08-23 11:44:14.814 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        Vendor
+        (emailAddress, firstName, imagePath, lastName, password, phoneNumber) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-23 11:44:14.814 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [jimminy@cricket.com]
+2021-08-23 11:44:14.814 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [Jimminy]
+2021-08-23 11:44:14.814 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [null]
+2021-08-23 11:44:14.814 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [Cricket]
+2021-08-23 11:44:14.814 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv.]
+2021-08-23 11:44:14.814 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [1234567890]
+2021-08-23 11:44:14.816 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        Vendor
+        (emailAddress, firstName, imagePath, lastName, password, phoneNumber) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-23 11:44:14.816 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [alice@wonderland.com]
+2021-08-23 11:44:14.816 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [Alice]
+2021-08-23 11:44:14.816 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [null]
+2021-08-23 11:44:14.816 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [Wonderland]
+2021-08-23 11:44:14.816 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv.]
+2021-08-23 11:44:14.816 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [1234567890]
+2021-08-23 11:44:14.817  INFO 16748 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Vendors Added****
+2021-08-23 11:44:14.817  INFO 16748 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Adding Authorization Groups****
+2021-08-23 11:44:14.819 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        AuthGroup
+        (aAuthGroup, aUsername) 
+    values
+        (?, ?)
+2021-08-23 11:44:14.819 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_ADMIN]
+2021-08-23 11:44:14.819 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-23 11:44:14.829 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        AuthGroup
+        (aAuthGroup, aUsername) 
+    values
+        (?, ?)
+2021-08-23 11:44:14.829 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_USER]
+2021-08-23 11:44:14.829 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-23 11:44:14.830 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        AuthGroup
+        (aAuthGroup, aUsername) 
+    values
+        (?, ?)
+2021-08-23 11:44:14.830 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [WRITE]
+2021-08-23 11:44:14.830 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-23 11:44:14.831 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        AuthGroup
+        (aAuthGroup, aUsername) 
+    values
+        (?, ?)
+2021-08-23 11:44:14.831 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_ADMIN]
+2021-08-23 11:44:14.831 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [gary@Zoofood@.com]
+2021-08-23 11:44:14.832 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        AuthGroup
+        (aAuthGroup, aUsername) 
+    values
+        (?, ?)
+2021-08-23 11:44:14.832 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_USER]
+2021-08-23 11:44:14.832 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [gary@Zoofood@.com]
+2021-08-23 11:44:14.833  INFO 16748 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Authorization Groups Added****
+2021-08-23 11:44:14.837  INFO 16748 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-08-23 11:44:14.838  INFO 16748 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-08-23 11:46:49.517  INFO 16748 --- [Thread-9] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-08-23 11:46:49.696  INFO 16748 --- [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-23 11:46:49.697  INFO 16748 --- [Thread-9] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-08-23 11:46:49.697 DEBUG 16748 --- [Thread-9] org.hibernate.SQL                        : 
+    
+    drop table if exists AuthGroup
+2021-08-23 11:46:49.713 DEBUG 16748 --- [Thread-9] org.hibernate.SQL                        : 
+    
+    drop table if exists Customer
+2021-08-23 11:46:49.722 DEBUG 16748 --- [Thread-9] org.hibernate.SQL                        : 
+    
+    drop table if exists Images
+2021-08-23 11:46:49.732 DEBUG 16748 --- [Thread-9] org.hibernate.SQL                        : 
+    
+    drop table if exists User
+2021-08-23 11:46:49.743 DEBUG 16748 --- [Thread-9] org.hibernate.SQL                        : 
+    
+    drop table if exists Vendor
+2021-08-23 11:46:49.751  INFO 16748 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-08-23 11:46:49.756  INFO 16748 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2021-08-23 11:46:49.813  INFO 16748 --- [restartedMain] org.perscholas.CaseRunner                : Starting CaseRunner using Java 11.0.12 on DESKTOP-D44LRSK with PID 16748 (C:\Users\14802\IdeaProjects\CaseStudySocks\CaseStudySocks\target\classes started by 14802 in C:\Users\14802\IdeaProjects\CaseStudySocks\CaseStudySocks)
+2021-08-23 11:46:49.813  INFO 16748 --- [restartedMain] org.perscholas.CaseRunner                : No active profile set, falling back to default profiles: default
+2021-08-23 11:46:49.944  INFO 16748 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-23 11:46:49.958  INFO 16748 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 4 JPA repository interfaces.
+2021-08-23 11:46:50.018  INFO 16748 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-23 11:46:50.019  INFO 16748 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-23 11:46:50.019  INFO 16748 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-08-23 11:46:50.034  INFO 16748 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-23 11:46:50.034  INFO 16748 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 219 ms
+2021-08-23 11:46:50.062  INFO 16748 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-23 11:46:50.067  INFO 16748 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-08-23 11:46:50.069  INFO 16748 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2021-08-23 11:46:50.069  INFO 16748 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB103Dialect
+2021-08-23 11:46:50.104 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists AuthGroup
+2021-08-23 11:46:50.107 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists Images
+2021-08-23 11:46:50.108 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists User
+2021-08-23 11:46:50.109 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists Vendor
+2021-08-23 11:46:50.110 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table AuthGroup (
+       aID bigint not null auto_increment,
+        aAuthGroup varchar(255),
+        aUsername varchar(255),
+        primary key (aID)
+    ) engine=InnoDB
+2021-08-23 11:46:50.120 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table Images (
+       id bigint not null auto_increment,
+        imageName varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+2021-08-23 11:46:50.133 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table User (
+       emailAddress varchar(255) not null,
+        firstName varchar(255),
+        imagePath varchar(255),
+        lastName varchar(255),
+        password varchar(255),
+        phoneNumber varchar(255),
+        role varchar(255),
+        primary key (emailAddress)
+    ) engine=InnoDB
+2021-08-23 11:46:50.144 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table Vendor (
+       vendorID bigint not null auto_increment,
+        emailAddress varchar(255),
+        firstName varchar(255),
+        imagePath varchar(255),
+        lastName varchar(255),
+        password varchar(255),
+        phoneNumber varchar(255),
+        primary key (vendorID)
+    ) engine=InnoDB
+2021-08-23 11:46:50.154 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table Vendor 
+       add constraint UK_eskag5deck0ujyrlsjoxmi79k unique (emailAddress)
+2021-08-23 11:46:50.170  INFO 16748 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-23 11:46:50.171  INFO 16748 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-23 11:46:50.175  WARN 16748 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appStartupRunner': Resolution of declared constructors on bean Class [org.perscholas.AppStartupRunner] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@54e2d457] failed; nested exception is java.lang.NoClassDefFoundError: org/perscholas/dao/ICustomerRepo
+2021-08-23 11:46:50.175  INFO 16748 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-23 11:46:50.175  INFO 16748 --- [restartedMain] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-08-23 11:46:50.176 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists AuthGroup
+2021-08-23 11:46:50.187 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists Images
+2021-08-23 11:46:50.200 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists User
+2021-08-23 11:46:50.214 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists Vendor
+2021-08-23 11:46:50.227  INFO 16748 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2021-08-23 11:46:50.232  INFO 16748 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2021-08-23 11:46:50.232  INFO 16748 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-08-23 11:46:50.238  INFO 16748 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-08-23 11:46:50.254 ERROR 16748 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'appStartupRunner': Resolution of declared constructors on bean Class [org.perscholas.AppStartupRunner] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@54e2d457] failed; nested exception is java.lang.NoClassDefFoundError: org/perscholas/dao/ICustomerRepo
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:309) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1284) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1201) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.7.jar:5.3.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.7.jar:5.3.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:438) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:337) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1336) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1325) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.perscholas.CaseRunner.main(CaseRunner.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.5.0.jar:2.5.0]
+Caused by: java.lang.NoClassDefFoundError: org/perscholas/dao/ICustomerRepo
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3137) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2357) ~[na:na]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:304) ~[spring-beans-5.3.7.jar:5.3.7]
+	... 23 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.perscholas.dao.ICustomerRepo
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:398) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145) ~[spring-boot-devtools-2.5.0.jar:2.5.0]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522) ~[na:na]
+	... 27 common frames omitted
+
+2021-08-23 11:46:59.950  INFO 16748 --- [restartedMain] org.perscholas.CaseRunner                : Starting CaseRunner using Java 11.0.12 on DESKTOP-D44LRSK with PID 16748 (C:\Users\14802\IdeaProjects\CaseStudySocks\CaseStudySocks\target\classes started by 14802 in C:\Users\14802\IdeaProjects\CaseStudySocks\CaseStudySocks)
+2021-08-23 11:46:59.950  INFO 16748 --- [restartedMain] org.perscholas.CaseRunner                : No active profile set, falling back to default profiles: default
+2021-08-23 11:47:00.106  INFO 16748 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-23 11:47:00.121  INFO 16748 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 4 JPA repository interfaces.
+2021-08-23 11:47:00.186  INFO 16748 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-23 11:47:00.186  INFO 16748 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-23 11:47:00.186  INFO 16748 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-08-23 11:47:00.202  INFO 16748 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2021-08-23 11:47:00.202  INFO 16748 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 251 ms
+2021-08-23 11:47:00.230  INFO 16748 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-23 11:47:00.234  INFO 16748 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2021-08-23 11:47:00.236  INFO 16748 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2021-08-23 11:47:00.236  INFO 16748 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB103Dialect
+2021-08-23 11:47:00.272 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists AuthGroup
+2021-08-23 11:47:00.273 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists Images
+2021-08-23 11:47:00.274 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists User
+2021-08-23 11:47:00.275 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists Vendor
+2021-08-23 11:47:00.276 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table AuthGroup (
+       aID bigint not null auto_increment,
+        aAuthGroup varchar(255),
+        aUsername varchar(255),
+        primary key (aID)
+    ) engine=InnoDB
+2021-08-23 11:47:00.286 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table Images (
+       id bigint not null auto_increment,
+        imageName varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+2021-08-23 11:47:00.296 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table User (
+       emailAddress varchar(255) not null,
+        firstName varchar(255),
+        imagePath varchar(255),
+        lastName varchar(255),
+        password varchar(255),
+        phoneNumber varchar(255),
+        role varchar(255),
+        primary key (emailAddress)
+    ) engine=InnoDB
+2021-08-23 11:47:00.305 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table Vendor (
+       emailAddress varchar(255) not null,
+        firstName varchar(255),
+        imagePath varchar(255),
+        lastName varchar(255),
+        password varchar(255),
+        phoneNumber varchar(255),
+        primary key (emailAddress)
+    ) engine=InnoDB
+2021-08-23 11:47:00.318  INFO 16748 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-23 11:47:00.318  INFO 16748 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-23 11:47:00.373  WARN 16748 --- [restartedMain] org.perscholas.AppStartupRunner          : StartupRunner Constructed!
+2021-08-23 11:47:00.438  INFO 16748 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-23 11:47:00.465  INFO 16748 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-08-23 11:47:00.475  INFO 16748 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-23 11:47:00.478  INFO 16748 --- [restartedMain] org.perscholas.CaseRunner                : Started CaseRunner in 0.554 seconds (JVM running for 1468.758)
+2021-08-23 11:47:00.478  INFO 16748 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-08-23 11:47:00.481  INFO 16748 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Starting Application****
+2021-08-23 11:47:00.481  INFO 16748 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Adding Users****
+2021-08-23 11:47:00.482 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        user0_.emailAddress as emailadd1_2_0_,
+        user0_.firstName as firstnam2_2_0_,
+        user0_.imagePath as imagepat3_2_0_,
+        user0_.lastName as lastname4_2_0_,
+        user0_.password as password5_2_0_,
+        user0_.phoneNumber as phonenum6_2_0_,
+        user0_.role as role7_2_0_ 
+    from
+        User user0_ 
+    where
+        user0_.emailAddress=?
+2021-08-23 11:47:00.482 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-23 11:47:00.487 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        user0_.emailAddress as emailadd1_2_0_,
+        user0_.firstName as firstnam2_2_0_,
+        user0_.imagePath as imagepat3_2_0_,
+        user0_.lastName as lastname4_2_0_,
+        user0_.password as password5_2_0_,
+        user0_.phoneNumber as phonenum6_2_0_,
+        user0_.role as role7_2_0_ 
+    from
+        User user0_ 
+    where
+        user0_.emailAddress=?
+2021-08-23 11:47:00.488 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [adiner@asu.edu]
+2021-08-23 11:47:00.488 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        user0_.emailAddress as emailadd1_2_0_,
+        user0_.firstName as firstnam2_2_0_,
+        user0_.imagePath as imagepat3_2_0_,
+        user0_.lastName as lastname4_2_0_,
+        user0_.password as password5_2_0_,
+        user0_.phoneNumber as phonenum6_2_0_,
+        user0_.role as role7_2_0_ 
+    from
+        User user0_ 
+    where
+        user0_.emailAddress=?
+2021-08-23 11:47:00.488 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [david@gmail.com]
+2021-08-23 11:47:00.489 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        user0_.emailAddress as emailadd1_2_0_,
+        user0_.firstName as firstnam2_2_0_,
+        user0_.imagePath as imagepat3_2_0_,
+        user0_.lastName as lastname4_2_0_,
+        user0_.password as password5_2_0_,
+        user0_.phoneNumber as phonenum6_2_0_,
+        user0_.role as role7_2_0_ 
+    from
+        User user0_ 
+    where
+        user0_.emailAddress=?
+2021-08-23 11:47:00.489 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Billy@gmail.com]
+2021-08-23 11:47:00.489 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        user0_.emailAddress as emailadd1_2_0_,
+        user0_.firstName as firstnam2_2_0_,
+        user0_.imagePath as imagepat3_2_0_,
+        user0_.lastName as lastname4_2_0_,
+        user0_.password as password5_2_0_,
+        user0_.phoneNumber as phonenum6_2_0_,
+        user0_.role as role7_2_0_ 
+    from
+        User user0_ 
+    where
+        user0_.emailAddress=?
+2021-08-23 11:47:00.489 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [randomemail@yahoo.com]
+2021-08-23 11:47:00.490  INFO 16748 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Users Added****
+2021-08-23 11:47:00.490  INFO 16748 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Adding Vendors****
+2021-08-23 11:47:00.491 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        vendor0_.emailAddress as emailadd1_3_0_,
+        vendor0_.firstName as firstnam2_3_0_,
+        vendor0_.imagePath as imagepat3_3_0_,
+        vendor0_.lastName as lastname4_3_0_,
+        vendor0_.password as password5_3_0_,
+        vendor0_.phoneNumber as phonenum6_3_0_ 
+    from
+        Vendor vendor0_ 
+    where
+        vendor0_.emailAddress=?
+2021-08-23 11:47:00.491 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [gary@Zoofood.com]
+2021-08-23 11:47:00.496 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        vendor0_.emailAddress as emailadd1_3_0_,
+        vendor0_.firstName as firstnam2_3_0_,
+        vendor0_.imagePath as imagepat3_3_0_,
+        vendor0_.lastName as lastname4_3_0_,
+        vendor0_.password as password5_3_0_,
+        vendor0_.phoneNumber as phonenum6_3_0_ 
+    from
+        Vendor vendor0_ 
+    where
+        vendor0_.emailAddress=?
+2021-08-23 11:47:00.496 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [nancy@gmail.com]
+2021-08-23 11:47:00.497 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        vendor0_.emailAddress as emailadd1_3_0_,
+        vendor0_.firstName as firstnam2_3_0_,
+        vendor0_.imagePath as imagepat3_3_0_,
+        vendor0_.lastName as lastname4_3_0_,
+        vendor0_.password as password5_3_0_,
+        vendor0_.phoneNumber as phonenum6_3_0_ 
+    from
+        Vendor vendor0_ 
+    where
+        vendor0_.emailAddress=?
+2021-08-23 11:47:00.497 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [jimminy@cricket.com]
+2021-08-23 11:47:00.497 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        vendor0_.emailAddress as emailadd1_3_0_,
+        vendor0_.firstName as firstnam2_3_0_,
+        vendor0_.imagePath as imagepat3_3_0_,
+        vendor0_.lastName as lastname4_3_0_,
+        vendor0_.password as password5_3_0_,
+        vendor0_.phoneNumber as phonenum6_3_0_ 
+    from
+        Vendor vendor0_ 
+    where
+        vendor0_.emailAddress=?
+2021-08-23 11:47:00.497 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [alice@wonderland.com]
+2021-08-23 11:47:00.498  INFO 16748 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Vendors Added****
+2021-08-23 11:47:00.498  INFO 16748 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Adding Authorization Groups****
+2021-08-23 11:47:00.499 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        User
+        (firstName, imagePath, lastName, password, phoneNumber, role, emailAddress) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2021-08-23 11:47:00.499 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Andrew]
+2021-08-23 11:47:00.499 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [null]
+2021-08-23 11:47:00.499 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Diner]
+2021-08-23 11:47:00.499 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [password]
+2021-08-23 11:47:00.499 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [4802986038]
+2021-08-23 11:47:00.499 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [null]
+2021-08-23 11:47:00.499 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-23 11:47:00.500 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        User
+        (firstName, imagePath, lastName, password, phoneNumber, role, emailAddress) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2021-08-23 11:47:00.500 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Andrew]
+2021-08-23 11:47:00.500 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [null]
+2021-08-23 11:47:00.500 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Diner]
+2021-08-23 11:47:00.500 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [password]
+2021-08-23 11:47:00.500 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [4802986038]
+2021-08-23 11:47:00.500 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [null]
+2021-08-23 11:47:00.500 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [adiner@asu.edu]
+2021-08-23 11:47:00.502 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        User
+        (firstName, imagePath, lastName, password, phoneNumber, role, emailAddress) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2021-08-23 11:47:00.502 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [David]
+2021-08-23 11:47:00.502 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [null]
+2021-08-23 11:47:00.502 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Diner]
+2021-08-23 11:47:00.502 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [password]
+2021-08-23 11:47:00.502 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [4802986048]
+2021-08-23 11:47:00.502 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [null]
+2021-08-23 11:47:00.502 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [david@gmail.com]
+2021-08-23 11:47:00.502 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        User
+        (firstName, imagePath, lastName, password, phoneNumber, role, emailAddress) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2021-08-23 11:47:00.502 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Billy]
+2021-08-23 11:47:00.502 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [null]
+2021-08-23 11:47:00.502 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Thorton]
+2021-08-23 11:47:00.502 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv.]
+2021-08-23 11:47:00.502 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [7538983043]
+2021-08-23 11:47:00.502 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [null]
+2021-08-23 11:47:00.502 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [Billy@gmail.com]
+2021-08-23 11:47:00.503 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        User
+        (firstName, imagePath, lastName, password, phoneNumber, role, emailAddress) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2021-08-23 11:47:00.503 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Random]
+2021-08-23 11:47:00.503 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [null]
+2021-08-23 11:47:00.503 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Person]
+2021-08-23 11:47:00.503 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [password]
+2021-08-23 11:47:00.503 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [1234567890]
+2021-08-23 11:47:00.503 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [null]
+2021-08-23 11:47:00.503 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [randomemail@yahoo.com]
+2021-08-23 11:47:00.503 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        Vendor
+        (firstName, imagePath, lastName, password, phoneNumber, emailAddress) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-23 11:47:00.503 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Gary]
+2021-08-23 11:47:00.503 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [null]
+2021-08-23 11:47:00.503 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Diner]
+2021-08-23 11:47:00.503 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [password]
+2021-08-23 11:47:00.503 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [7608352012]
+2021-08-23 11:47:00.503 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [gary@Zoofood.com]
+2021-08-23 11:47:00.504 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        Vendor
+        (firstName, imagePath, lastName, password, phoneNumber, emailAddress) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-23 11:47:00.504 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Nancy]
+2021-08-23 11:47:00.504 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [null]
+2021-08-23 11:47:00.504 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Diner]
+2021-08-23 11:47:00.504 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [password]
+2021-08-23 11:47:00.504 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [8385234021]
+2021-08-23 11:47:00.504 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [nancy@gmail.com]
+2021-08-23 11:47:00.504 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        Vendor
+        (firstName, imagePath, lastName, password, phoneNumber, emailAddress) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-23 11:47:00.504 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Jimminy]
+2021-08-23 11:47:00.504 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [null]
+2021-08-23 11:47:00.504 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Cricket]
+2021-08-23 11:47:00.505 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [password]
+2021-08-23 11:47:00.505 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [1234567890]
+2021-08-23 11:47:00.505 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [jimminy@cricket.com]
+2021-08-23 11:47:00.505 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        Vendor
+        (firstName, imagePath, lastName, password, phoneNumber, emailAddress) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2021-08-23 11:47:00.505 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Alice]
+2021-08-23 11:47:00.505 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [null]
+2021-08-23 11:47:00.505 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Wonderland]
+2021-08-23 11:47:00.505 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [password]
+2021-08-23 11:47:00.505 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [1234567890]
+2021-08-23 11:47:00.505 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [alice@wonderland.com]
+2021-08-23 11:47:00.505 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        AuthGroup
+        (aAuthGroup, aUsername) 
+    values
+        (?, ?)
+2021-08-23 11:47:00.505 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_ADMIN]
+2021-08-23 11:47:00.505 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-23 11:47:00.518 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        AuthGroup
+        (aAuthGroup, aUsername) 
+    values
+        (?, ?)
+2021-08-23 11:47:00.519 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_USER]
+2021-08-23 11:47:00.519 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-23 11:47:00.519 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        AuthGroup
+        (aAuthGroup, aUsername) 
+    values
+        (?, ?)
+2021-08-23 11:47:00.519 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [WRITE]
+2021-08-23 11:47:00.519 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-23 11:47:00.519 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        AuthGroup
+        (aAuthGroup, aUsername) 
+    values
+        (?, ?)
+2021-08-23 11:47:00.519 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_ADMIN]
+2021-08-23 11:47:00.519 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [gary@Zoofood@.com]
+2021-08-23 11:47:00.520 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        AuthGroup
+        (aAuthGroup, aUsername) 
+    values
+        (?, ?)
+2021-08-23 11:47:00.520 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_USER]
+2021-08-23 11:47:00.520 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [gary@Zoofood@.com]
+2021-08-23 11:47:00.520  INFO 16748 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Authorization Groups Added****
+2021-08-23 11:47:00.521 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    update
+        User 
+    set
+        firstName=?,
+        imagePath=?,
+        lastName=?,
+        password=?,
+        phoneNumber=?,
+        role=? 
+    where
+        emailAddress=?
+2021-08-23 11:47:00.521 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Andrew]
+2021-08-23 11:47:00.521 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [defaultprofile.jpg]
+2021-08-23 11:47:00.521 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Diner]
+2021-08-23 11:47:00.521 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [password]
+2021-08-23 11:47:00.521 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [4802986038]
+2021-08-23 11:47:00.521 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [null]
+2021-08-23 11:47:00.521 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-23 11:47:00.521 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    update
+        User 
+    set
+        firstName=?,
+        imagePath=?,
+        lastName=?,
+        password=?,
+        phoneNumber=?,
+        role=? 
+    where
+        emailAddress=?
+2021-08-23 11:47:00.521 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Andrew]
+2021-08-23 11:47:00.521 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [defaultprofile.jpg]
+2021-08-23 11:47:00.521 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Diner]
+2021-08-23 11:47:00.521 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [password]
+2021-08-23 11:47:00.522 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [4802986038]
+2021-08-23 11:47:00.522 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [null]
+2021-08-23 11:47:00.522 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [adiner@asu.edu]
+2021-08-23 11:47:00.522 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    update
+        User 
+    set
+        firstName=?,
+        imagePath=?,
+        lastName=?,
+        password=?,
+        phoneNumber=?,
+        role=? 
+    where
+        emailAddress=?
+2021-08-23 11:47:00.522 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [David]
+2021-08-23 11:47:00.522 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [defaultprofile.jpg]
+2021-08-23 11:47:00.522 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Diner]
+2021-08-23 11:47:00.522 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [password]
+2021-08-23 11:47:00.522 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [4802986048]
+2021-08-23 11:47:00.522 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [null]
+2021-08-23 11:47:00.522 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [david@gmail.com]
+2021-08-23 11:47:00.523 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    update
+        User 
+    set
+        firstName=?,
+        imagePath=?,
+        lastName=?,
+        password=?,
+        phoneNumber=?,
+        role=? 
+    where
+        emailAddress=?
+2021-08-23 11:47:00.523 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Billy]
+2021-08-23 11:47:00.523 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [defaultprofile.jpg]
+2021-08-23 11:47:00.523 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Thorton]
+2021-08-23 11:47:00.523 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv.]
+2021-08-23 11:47:00.523 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [7538983043]
+2021-08-23 11:47:00.523 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [null]
+2021-08-23 11:47:00.523 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [Billy@gmail.com]
+2021-08-23 11:47:00.523 DEBUG 16748 --- [restartedMain] org.hibernate.SQL                        : 
+    update
+        User 
+    set
+        firstName=?,
+        imagePath=?,
+        lastName=?,
+        password=?,
+        phoneNumber=?,
+        role=? 
+    where
+        emailAddress=?
+2021-08-23 11:47:00.523 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Random]
+2021-08-23 11:47:00.523 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [webcamup.png]
+2021-08-23 11:47:00.523 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Person]
+2021-08-23 11:47:00.523 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [password]
+2021-08-23 11:47:00.523 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [1234567890]
+2021-08-23 11:47:00.523 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [null]
+2021-08-23 11:47:00.523 TRACE 16748 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [randomemail@yahoo.com]
+2021-08-23 11:47:00.526  INFO 16748 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-08-23 11:47:00.526  INFO 16748 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
