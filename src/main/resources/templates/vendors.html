@@ -51,6 +51,10 @@
         <td class="col-3" th:text="${v.lastName}"></td>
         <td class="col-3" th:text="${v.phoneNumber}"></td>
         <td class="col-3" th:text="${v.password}"></td>
+        <td>
+          <a class="h4" th:href="@{'/vendors/edit/' + ${v.emailAddress}}">Edit</a>
+          <a class="h4"th:href="@{'/vendors/delete/' + ${v.emailAddress}}">Delete</a>
+        </td>
       </tr>
       </tbody>
     </table>

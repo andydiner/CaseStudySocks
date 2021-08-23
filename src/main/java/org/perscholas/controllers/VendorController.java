@@ -1,6 +1,9 @@
 package org.perscholas.controllers;
 
 import lombok.extern.slf4j.Slf4j;
+import org.perscholas.exceptions.UserNotFoundException;
+import org.perscholas.exceptions.VendorNotFoundException;
+import org.perscholas.models.User;
 import org.perscholas.models.Vendor;
 import org.perscholas.services.VendorServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -83,6 +87,37 @@ public class VendorController {
         return "vendorlogin";
     }
 
+    @GetMapping("/vendors/edit/{emailAddress}")
+    public String showEditForm(@PathVariable("emailAddress") String email, Model model, RedirectAttributes redirectAttributes){
+        try{
+            Vendor vendor = vendorServices.get(email);
+            model.addAttribute("vendor", vendor);
+            return "updatevendor";
+        } catch (VendorNotFoundException e){
+            redirectAttributes.addFlashAttribute("message", "The vendor has been saved successfully.");
+            e.printStackTrace();
+            return "redirect:/vendors";
+        }
+    }
+
+    @PostMapping("/vendors/edit/updatevendor")
+    public String saveUpdate(Vendor vendor, RedirectAttributes redirectAttributes){
+        vendorServices.save(vendor);
+        redirectAttributes.addFlashAttribute("message", "Vendor saved successfully");
+        return "redirect:/vendors";
+    }
+
+    @GetMapping("/vendors/delete/{emailAddress}")
+    public String deleteVendor(@PathVariable("emailAddress") String email, Model model, RedirectAttributes redirectAttributes){
+        try{
+            vendorServices.delete(email);
+            return "redirect:/vendor";
+        } catch (VendorNotFoundException e){
+            redirectAttributes.addFlashAttribute("message", "The vendor has been saved successfully.");
+            e.printStackTrace();
+            return "redirect:/vendors";
+        }
+    }
 
     @ModelAttribute("currentVendor")
     public Vendor vendorInit(){

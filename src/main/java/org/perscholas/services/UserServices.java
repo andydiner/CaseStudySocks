@@ -68,7 +68,14 @@ public class UserServices {
             return getUser.get();
         }
         throw new UserNotFoundException("Could not find any users with email: " + email);
+    }
 
+    public void delete(String email) throws UserNotFoundException {
+        Optional<User> getUser = userRepo.findById(email);
+        if(getUser.isPresent()) {
+            userRepo.deleteById(email);
+        }
+        throw new UserNotFoundException("Could not find any users with email: " + email);
     }
 
 }

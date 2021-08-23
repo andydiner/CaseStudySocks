@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Register User</title>
+    <title>Update Vendor</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -28,25 +28,21 @@
 <!-- Page content-->
 <div class="container">
     <div class="text-center mt-5">
-        <h1>Register User</h1>
-        <form action="registeruser" method="post"  th:object="${user}">
-<!--            <form th:action="@{/uploadfile}" method="post" enctype="multipart/form-data">-->
-
-<!--            <label> User Profile Picture</label>-->
-<!--            <input class="form-control" th:type="file" name="imagePath" th:field = "*{imagePath}" enctype="multipart/form-data"/>-->
-            <label>User Email</label>
+        <h1>Update Vendor</h1>
+        <form action="updatevendor" method="post" th:object="${vendor}">
+            <label>Vendor Email</label>
             <input type="text" class="form-control" name="emailAddress" th:field="*{emailAddress}" />
             <!--      <label style="color:red" th:each="error:${#fields.errors('email')}" th:text="${error}">error</label>-->
-            <label>User First Name</label>
+            <label>Vendor First Name</label>
             <input type="text" class="form-control" name="firstname" th:field="*{firstName}" />
             <!--      <label style="color:red" th:each="error:${#fields.errors('name')}" th:text="${error}">error</label>-->
-            <label>User Last Name</label>
+            <label>Vendor Last Name</label>
             <input type="text" class="form-control" name="lastname" th:field="*{lastName}" />
             <!--      <label style="color:red" th:each="error:${#fields.errors('name')}" th:text="${error}">error</label>-->
-            <label>User Phone Number</label>
+            <label>Vendor Phone Number</label>
             <input type="text" class="form-control" name="phonenumber" th:field="*{phoneNumber}" />
             <!--      <label style="color:red" th:each="error:${#fields.errors('name')}" th:text="${error}">error</label>-->
-            <label>User Password</label>
+            <label>Vendor Password</label>
             <input type="text" class="form-control" name="password" th:field="*{password}" />
             <!--      <label style="color:red" th:each="error:${#fields.errors('password')}" th:text="${error}">error</label>-->
             <input type="submit" name="Submit" />

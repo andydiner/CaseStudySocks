@@ -13,7 +13,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 @Slf4j
@@ -21,6 +20,7 @@ import java.util.Optional;
 public class UserController {
 
     UserServices userServices;
+    String userRedirect = "redirect:/users";
     @Autowired
     public UserController(UserServices userServices){
         this.userServices = userServices;
@@ -44,8 +44,9 @@ public class UserController {
     public String postRegisterUser(Model model, @ModelAttribute("user") User user){
         log.warn("NAME: " + user.getFirstName() + " " + user.getLastName()
                 + " " + user.getEmailAddress());
+
         userServices.saveUser(user);
-        return "redirect:/users";
+        return userRedirect;
     }
 
     @GetMapping("/users/userbyemail")
@@ -61,7 +62,7 @@ public class UserController {
         user = userServices.getUserByEmail(user.getEmailAddress());
         model.addAttribute("user", user);
 
-        return "userinfo";
+        return "userprofile";
     }
 
     @GetMapping("/users/login")
@@ -70,7 +71,6 @@ public class UserController {
         model.addAttribute("currentUser", new User());
         return "login";
     }
-
 
     @PostMapping("/users/login")
     public String postLogin(Model model, @ModelAttribute("currentUser") @Valid User currentUser, BindingResult bindingResult){
@@ -96,7 +96,7 @@ public class UserController {
             } catch (UserNotFoundException e){
                 redirectAttributes.addFlashAttribute("message", "The user has been saved successfully.");
                 e.printStackTrace();
-                return "redirect:/users";
+                return userRedirect;
             }
     }
 
@@ -104,8 +104,21 @@ public class UserController {
     public String saveUpdate(User user, RedirectAttributes redirectAttributes){
             userServices.save(user);
             redirectAttributes.addFlashAttribute("message", "User saved successfully");
-        return "redirect:/users";
+        return userRedirect;
     }
+
+    @GetMapping("/users/delete/{emailAddress}")
+    public String deleteUser(@PathVariable("emailAddress") String email, Model model, RedirectAttributes redirectAttributes){
+        try{
+            userServices.delete(email);
+            return userRedirect;
+        } catch (UserNotFoundException e){
+            redirectAttributes.addFlashAttribute("message", "The user has been saved successfully.");
+            e.printStackTrace();
+            return userRedirect;
+        }
+    }
+
 
     @ModelAttribute("currentUser")
     public User userInit(){

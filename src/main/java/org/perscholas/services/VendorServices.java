@@ -2,12 +2,14 @@ package org.perscholas.services;
 
 import lombok.extern.slf4j.Slf4j;
 import org.perscholas.dao.IVendorRepo;
+import org.perscholas.exceptions.VendorNotFoundException;
 import org.perscholas.models.Vendor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -49,9 +51,22 @@ public class VendorServices {
         if (uPassword.equals(vendor.getPassword())) {
             return true;
         }
-        else {
             return false;
-        }
     }
 
+    public Vendor get(String email) throws VendorNotFoundException {
+        Optional<Vendor> getVendor = vendorRepo.findById(email);
+        if(getVendor.isPresent()){
+            return getVendor.get();
+        }
+        throw new VendorNotFoundException("Could not find any vendors with email: " + email);
+    }
+
+    public void delete(String email) throws VendorNotFoundException {
+        Optional<Vendor> getVendor = vendorRepo.findById(email);
+        if(getVendor.isPresent()) {
+            vendorRepo.deleteById(email);
+        }
+        throw new VendorNotFoundException("Could not find any vendors with email: " + email);
+    }
 }
