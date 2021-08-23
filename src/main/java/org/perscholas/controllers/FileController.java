@@ -29,12 +29,8 @@ public class FileController {
     @PostMapping("/uploadfile")
     public String uploadFile(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) throws FileNotFoundException {
 
-        long id = fileService.uploadFile(file);
+        fileService.uploadFile(file);
         redirectAttributes.addFlashAttribute("message", "You successfully uploaded " + file.getOriginalFilename());
-
-
-        //redirectAttributes.addFlashAttribute("filename", file.getOriginalFilename());
-
         return "redirect:/uploadform";
     }
 
@@ -45,5 +41,21 @@ public class FileController {
         return "showimages";
 
     }
+
+    @GetMapping("/webcam")
+    public String takePicture(){
+        return "webcam";
+    }
+
+    @PostMapping("/saveimage")
+    public String saveImage(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) throws FileNotFoundException {
+
+        fileService.uploadFile(file);
+        redirectAttributes.addFlashAttribute("message", "You successfully uploaded " + file.getOriginalFilename());
+
+
+        return "redirect:/uploadform";
+    }
+
 
 }
