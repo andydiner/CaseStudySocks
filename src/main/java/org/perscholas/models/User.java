@@ -40,8 +40,8 @@ public class User implements Serializable {
     @NonNull @NotBlank
     String password;
     String role;
-    String imagePath;
+    String imagePath = "defaultprofile.jpg";
 
     //@ManyToMany
-   // List<Order> orders;
+   // List<Orders> orderssses;
 }
