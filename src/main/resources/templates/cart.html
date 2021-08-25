@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Student List</title>
+    <title>Your Cart</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" th:href="@{assets/favicon.ico}" />
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -28,28 +28,35 @@
 <!-- Page content-->
 <div class="container">
     <div class="text-center mt-5">
-        <h1>Users</h1>
+        <h1>Your Cart</h1>
         <table class="table">
             <thead>
             <tr>
-                <th class="col-3">Profile Picture</th>
-                <th class="col-3">Email</th>
-                <th class="col-3">First</th>
-                <th class="col-3">Last</th>
-                <th class="col-3">Phone</th>
+                <th class="col-3">Display</th>
+                <th class="col-3">Name</th>
+                <th class="col-3">Description</th>
+                <th class="col-3">Quantity Available</th>
+                <th class="col-3">Total Stock</th>
+                <th class="col-3">Price</th>
+
             </tr>
             </thead>
             <tbody>
-            <tr th:each="u:${users}" >
-                <td class="col-3"> <img th:src="${u.imagePath}" alt="..." width="130" class="rounded mb-2 img-thumbnail"/> </td>
-                <td class="col-3" th:text="${u.emailAddress}"></td>
-                <td class="col-3" th:text="${u.firstName}"></td>
-                <td class="col-3" th:text="${u.lastName}"></td>
-                <td class="col-3" th:text="${u.phoneNumber}"></td>
+            <tr th:each="p:${products}" >
+                <td class="col-3"> <img th:src="${p.imagePath}" alt="..." width="130" class="rounded mb-2 img-thumbnail"/> </td>
+                <td class="col-3" th:text="${p.name}"></td>
+                <td class="col-3" th:text="${p.description}"></td>
+                <td class="col-3" th:text="${p.getQuantityInStock}"></td>
+                <td class="col-3" th:text="${p.totalQuantity}"></td>
+                <td class="col-3" th:text="${p.price}"></td>
                 <td>
-                    <a class="h4" th:href="@{'/users/edit/' + ${u.emailAddress}}">Edit</a>
-                    <a class="h4" th:href="@{'/users/delete/' + ${u.emailAddress}}">Delete</a>
+                    <a class="h4" th:href="@{'/cart/delete/' + ${p.productid}}">Delete</a>
+<!--                    <a class="h4" th:href="@{'/products/delete/' + ${p.productid}}">Delete</a>-->
                 </td>
+            </tr>
+            <tr>
+                <td class="col-3" > Total Price of Order</td>
+                <td class="col-3" th:text = "${order.totalPrice}"/>
             </tr>
             </tbody>
         </table>

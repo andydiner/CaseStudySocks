@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.perscholas.dao.IOrderRepo;
 import org.perscholas.exceptions.OrderNotFoundException;
 import org.perscholas.models.Orders;
+import org.perscholas.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +22,7 @@ public class OrderServices {
     @Autowired
     public OrderServices(IOrderRepo orderRepo){
         this.orderRepo = orderRepo;
+
     }
     public Orders save(Orders o){
         return orderRepo.save(o);
@@ -45,6 +47,15 @@ public class OrderServices {
 
     public List<Orders> getAllOrders() {
         List<Orders> orders = orderRepo.findAll();
+        for (Orders o: orders) {
+            List<Product> productList = o.getProductList();
+            double totalPrice = 0L;
+            for (Product p: productList) {
+                totalPrice += p.getPrice();
+            }
+            o.setTotalPrice(totalPrice);
+
+        }
         log.warn(String.valueOf(orders));
         return orders;
     }
@@ -68,6 +79,20 @@ public class OrderServices {
         }
         throw new OrderNotFoundException("Could not find any orderssses with id: " + orderID);
     }
+
+    public double calculateTotal(Integer orderid){
+        Optional<Orders> getOrder = orderRepo.findById(orderid);
+        List<Product> productList = getOrder.get().getProductList();
+        double totalPrice = 0;
+
+        for(int i = 0; i < productList.size(); i++){
+            totalPrice += productList.get(i).getPrice();
+        }
+        return totalPrice;
+
+    }
+
+
 
 //    public void addProduct(Long productID, Long orderID){
 //        Optional<Product> addItem = productRepo.findById(productID);

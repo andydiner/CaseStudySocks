@@ -12,9 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Student List</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" th:href="@{assets/favicon.ico}" />
+    <title>Search Vendors by Email</title>
     <!-- Core theme CSS (includes Bootstrap)-->
     <link th:href="@{~/css/styles.css}" rel="stylesheet" />
     <link th:href="@{~/css/mystyles.css}" rel="stylesheet" />
@@ -28,31 +26,13 @@
 <!-- Page content-->
 <div class="container">
     <div class="text-center mt-5">
-        <h1>Users</h1>
-        <table class="table">
-            <thead>
-            <tr>
-                <th class="col-3">Profile Picture</th>
-                <th class="col-3">Email</th>
-                <th class="col-3">First</th>
-                <th class="col-3">Last</th>
-                <th class="col-3">Phone</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="u:${users}" >
-                <td class="col-3"> <img th:src="${u.imagePath}" alt="..." width="130" class="rounded mb-2 img-thumbnail"/> </td>
-                <td class="col-3" th:text="${u.emailAddress}"></td>
-                <td class="col-3" th:text="${u.firstName}"></td>
-                <td class="col-3" th:text="${u.lastName}"></td>
-                <td class="col-3" th:text="${u.phoneNumber}"></td>
-                <td>
-                    <a class="h4" th:href="@{'/users/edit/' + ${u.emailAddress}}">Edit</a>
-                    <a class="h4" th:href="@{'/users/delete/' + ${u.emailAddress}}">Delete</a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+        <h1>Search by Email</h1>
+        <form action="vendorbyemail" method="post" th:object="${vendor}">
+            <label>Enter Vendor Email</label>
+            <input type="text" name="email" class="form-control" th:field="*{emailAddress}" th:value="${emailAddress}"/>
+            <!--      <label style="color:red" th:each="error:${#fields.errors('email')}" th:text="${error}">error</label>-->
+            <input type="submit" name="Submit" />
+        </form>
     </div>
 </div>
 <!-- Bootstrap core JS-->

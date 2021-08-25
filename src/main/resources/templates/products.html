@@ -43,14 +43,14 @@
             </thead>
             <tbody>
             <tr th:each="p:${products}" >
-                <td  class="col-3"> <img th:src="${p.imagePath}" alt="..." width="130" class="rounded mb-2 img-thumbnail"/> </td>
+                <td class="col-3"> <img th:src="${p.imagePath}" alt="..." width="130" class="rounded mb-2 img-thumbnail"/> </td>
                 <td class="col-3" th:text="${p.name}"></td>
                 <td class="col-3" th:text="${p.description}"></td>
                 <td class="col-3" th:text="${p.getQuantityInStock}"></td>
                 <td class="col-3" th:text="${p.totalQuantity}"></td>
                 <td class="col-3" th:text="${p.price}"></td>
                 <td>
-                    <a class="h4" th:href="@{'/products/edit/' + ${p.productid}}">Edit</a>
+                    <a class="h4" th:href="@{'/products/add/' + ${p.productid}}">Add</a>
 <!--                    <a class="h4" th:href="@{'/products/delete/' + ${p.productid}}">Delete</a>-->
                 </td>
             </tr>

@@ -15,7 +15,6 @@ import java.util.Optional;
 @Transactional
 @Slf4j
 public class VendorServices {
-
     IVendorRepo vendorRepo;
     @Autowired
     public VendorServices(IVendorRepo vendorRepo){

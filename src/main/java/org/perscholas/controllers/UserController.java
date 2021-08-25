@@ -88,7 +88,8 @@ public class UserController {
     }
 
     @GetMapping("/users/edit/{emailAddress}")
-    public String showEditForm(@PathVariable("emailAddress") String email, Model model, RedirectAttributes redirectAttributes){
+    public String showEditForm(@PathVariable("emailAddress") String email,
+                               Model model, RedirectAttributes redirectAttributes){
             try{
                 User user = userServices.get(email);
                 model.addAttribute("user", user);

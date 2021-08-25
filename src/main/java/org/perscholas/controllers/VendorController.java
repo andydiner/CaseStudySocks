@@ -61,7 +61,7 @@ public class VendorController {
         vendor = vendorServices.getVendorByEmail(vendor.getEmailAddress());
         model.addAttribute("vendor", vendor);
 
-        return "vendorinfo";
+        return "vendorprofile";
     }
 
     @GetMapping("/vendors/vendorlogin")

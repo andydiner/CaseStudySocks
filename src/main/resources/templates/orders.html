@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Student List</title>
+    <title>Order List</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" th:href="@{assets/favicon.ico}" />
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -28,29 +28,28 @@
 <!-- Page content-->
 <div class="container">
     <div class="text-center mt-5">
-        <h1>Users</h1>
+        <h1>Orders</h1>
         <table class="table">
             <thead>
             <tr>
-                <th class="col-3">Email</th>
-                <th class="col-3">First</th>
-                <th class="col-3">Last</th>
-                <th class="col-3">Phone</th>
-                <th class="col-3">Pass</th>
-
+                <th class="col-3">User Email</th>
+                <th class="col-3">Vendor Email</th>
+                <th class="col-3">Total Price</th>
+<!--                <th class="col-3">Total Stock</th>-->
+<!--                <th class="col-3">Price</th>-->
             </tr>
             </thead>
             <tbody>
             <tr th:each="o:${orders}" >
-                <td class="col-3" th:text="${u.emailAddress}"></td>
-                <td class="col-3" th:text="${u.firstName}"></td>
-                <td class="col-3" th:text="${u.lastName}"></td>
-                <td class="col-3" th:text="${u.phoneNumber}"></td>
-                <td class="col-3" th:text="${u.password}"></td>
-                <td>
-                    <a class="h4" th:href="@{'/users/edit/' + ${u.emailAddress}}">Edit</a>
-                    <a class="h4"th:href="@{'/users/delete/' + ${u.emailAddress}}">Delete</a>
-                </td>
+                <td class="col-3" th:text="${o.userEmail}"></td>
+                <td class="col-3" th:text="${o.vendorEmail}"></td>
+                <td class="col-3" th:text="${o.totalPrice}"></td>
+<!--                <td class="col-3" th:text="${o.totalQuantity}"></td>-->
+<!--                <td class="col-3" th:text="${o.price}"></td>-->
+<!--                <td>-->
+<!--&lt;!&ndash;                    <a class="h4" th:href="@{'/orders/edit/' + ${o.orderid}}">Edit</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <a class="h4" th:href="@{'/orders/delete/' + ${o.orderid}}">Delete</a>&ndash;&gt;-->
+<!--                </td>-->
             </tr>
             </tbody>
         </table>

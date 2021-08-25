@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title><!DOCTYPE html>
+  <!DOCTYPE html>
       <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
@@ -22,6 +18,13 @@
   <!-- Core theme CSS (includes Bootstrap)-->
   <link th:href="@{~/css/styles.css}" rel="stylesheet" />
   <link th:href="@{~/css/mystyles.css}" rel="stylesheet" />
+  <link th:href="@{~/css/csscard.css}" rel="stylesheet" />
+
+<!--  <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet"/>-->
+<!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js" rel="stylesheet"/>-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
 </head>
 <body>
 <!-- Responsive navbar-->
@@ -30,34 +33,50 @@
   </div>
 </nav>
 <!-- Page content-->
-<div class="container">
-  <div class="text-center mt-5">
-    <h1>Vendors</h1>
-    <table class="table">
-      <thead>
-      <tr>
-        <th class="col-3">Email</th>
-        <th class="col-3">First</th>
-        <th class="col-3">Last</th>
-        <th class="col-3">Phone</th>
-        <th class="col-3">Pass</th>
+<!--  <table class="table">
 
-      </tr>
-      </thead>
       <tbody>
       <tr th:each="v:${vendors}" >
         <td class="col-3" th:text="${v.emailAddress}"></td>
         <td class="col-3" th:text="${v.firstName}"></td>
         <td class="col-3" th:text="${v.lastName}"></td>
         <td class="col-3" th:text="${v.phoneNumber}"></td>
-        <td class="col-3" th:text="${v.password}"></td>
         <td>
           <a class="h4" th:href="@{'/vendors/edit/' + ${v.emailAddress}}">Edit</a>
           <a class="h4"th:href="@{'/vendors/delete/' + ${v.emailAddress}}">Delete</a>
         </td>
       </tr>
       </tbody>
-    </table>
+    </table>-->
+
+
+<tr th:each="v:${vendors}" >
+<div class="container mt-5 d-flex justify-content-center">
+  <div class="card p-3">
+    <div class="d-flex align-items-center">
+      <div class="image"> <img th:src="@{~/{path}(path=${v.imagePath})}" alt="..." width="130" class="rounded mb-2 img-thumbnail"/>
+      </div>
+      <div class="ml-3 w-100">
+        <h4 class="mb-0 mt-0 d-inline"th:text="${v.firstName}"></h4> <h4 class="mb-0 mt-0 d-inline" th:text="${v.lastName}"></h4>
+        <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+          <div class="d-flex flex-column"><span class="rating">Phone Number</span> <span class="number1" th:text="${v.phoneNumber}"></span></div>
+<!--          <div class="d-flex flex-column"> <span class="followers">Followers</span> <span class="number2">980</span> </div>-->
+          <div class="d-flex flex-column"> <span class="rating">Orders Handled</span> <span class="number3" th:text="${v.getOrdersList().size()}"></span> </div>
+        </div>
+        <div class="button mt-2 d-flex flex-row align-items-center">
+          <button class="btn btn-sm btn-outline-primary w-100"><a class="h4" th:href="@{'/vendors/edit/' + ${v.emailAddress}}">Edit</a></button>
+          <button class="btn btn-sm btn-outline-primary w-100 ml-2">    <a class="h4"th:href="@{'/vendors/delete/' + ${v.emailAddress}}">Delete</a>
+          </button> </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </td>
+</tr>
+<div class="container">
+  <div class="text-center mt-5">
+    <h1>Vendors</h1>
+
   </div>
 </div>
 <!-- Bootstrap core JS-->
