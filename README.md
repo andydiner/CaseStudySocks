@@ -1,7 +1,7 @@
 # CaseStudySocks
 Software Requirements Specification for SockCase
 Andrew Diner
-
+Presentation: https://docs.google.com/presentation/d/1XgFcpMcU3Z884n66yKbwYaYBJJPku93N/edit?usp=sharing&ouid=113171354898542982434&rtpof=true&sd=true
 
 Purpose
 We are a company that wishes to collect and sell obscure socks to other sock collectors. We want to connect sock salespeople with sock collectors, a place for only sock buying trading and selling. We will receive a small portion of every sale in order to keep the website running.
