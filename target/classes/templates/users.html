@@ -32,24 +32,23 @@
         <table class="table">
             <thead>
             <tr>
+                <th class="col-3">Profile Picture</th>
                 <th class="col-3">Email</th>
                 <th class="col-3">First</th>
                 <th class="col-3">Last</th>
                 <th class="col-3">Phone</th>
-                <th class="col-3">Pass</th>
-
             </tr>
             </thead>
             <tbody>
             <tr th:each="u:${users}" >
+                <td class="col-3"> <img th:src="${u.imagePath}" alt="..." width="130" class="rounded mb-2 img-thumbnail"/> </td>
                 <td class="col-3" th:text="${u.emailAddress}"></td>
                 <td class="col-3" th:text="${u.firstName}"></td>
                 <td class="col-3" th:text="${u.lastName}"></td>
                 <td class="col-3" th:text="${u.phoneNumber}"></td>
-                <td class="col-3" th:text="${u.password}"></td>
                 <td>
                     <a class="h4" th:href="@{'/users/edit/' + ${u.emailAddress}}">Edit</a>
-                    <a class="h4"th:href="@{'/users/delete/' + ${u.emailAddress}}">Delete</a>
+                    <a class="h4" th:href="@{'/users/delete/' + ${u.emailAddress}}">Delete</a>
                 </td>
             </tr>
             </tbody>

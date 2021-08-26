@@ -12,19 +12,19 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 public class VendorRepoTest {
 
-    @Autowired
-    IVendorRepo iVendorRepo;
-
-    @Test
-    public void testRepository()
-    {
-        Vendor vendor = new Vendor();
-        vendor.setFirstName("Lokesh");
-        vendor.setLastName("Gupta");
-        vendor.setEmailAddress("howtodoinjava@gmail.com");
-
-        iVendorRepo.save(vendor);
-
-        Assert.assertNotNull(vendor.getEmailAddress());
-    }
+//    @Autowired
+//    IVendorRepo iVendorRepo;
+//
+//    @Test
+//    public void testRepository()
+//    {
+//        Vendor vendor = new Vendor();
+//        vendor.setFirstName("Lokesh");
+//        vendor.setLastName("Gupta");
+//        vendor.setEmailAddress("howtodoinjava@gmail.com");
+//
+//        iVendorRepo.save(vendor);
+//
+//        Assert.assertNotNull(vendor.getEmailAddress());
+//    }
 }

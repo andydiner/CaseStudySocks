@@ -1,10 +1,10 @@
 
-[
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Ò˜·¼
-Q	java:S125"<This block of commented-out lines of code should be removed.(øÍ®Ø
-k
-java:S1128"URemove this unused import 'org.springframework.boot.autoconfigure.domain.EntityScan'.(›Ù¯
-l
-java:S1128"QRemove this unused import 'org.springframework.context.annotation.ComponentScan'.(æëòÒûÿÿÿÿ
-|
-java:S1128	"aRemove this unused import 'org.springframework.data.jpa.repository.config.EnableJpaRepositories'.(²œ˜üÿÿÿÿ
+b
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Ò˜·¼8±¸£Î·/
+X	java:S125"<This block of commented-out lines of code should be removed.(øÍ®Ø8³¸£Î·/
+r
+java:S1128"URemove this unused import 'org.springframework.boot.autoconfigure.domain.EntityScan'.(›Ù¯8³¸£Î·/
+s
+java:S1128"QRemove this unused import 'org.springframework.context.annotation.ComponentScan'.(æëòÒûÿÿÿÿ8³¸£Î·/
+ƒ
+java:S1128	"aRemove this unused import 'org.springframework.data.jpa.repository.config.EnableJpaRepositories'.(²œ˜üÿÿÿÿ8³¸£Î·/

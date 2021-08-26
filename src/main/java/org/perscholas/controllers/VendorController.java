@@ -61,7 +61,7 @@ public class VendorController {
         vendor = vendorServices.getVendorByEmail(vendor.getEmailAddress());
         model.addAttribute("vendor", vendor);
 
-        return "vendorinfo";
+        return "vendorprofile";
     }
 
     @GetMapping("/vendors/vendorlogin")
@@ -102,7 +102,11 @@ public class VendorController {
 
     @PostMapping("/vendors/edit/updatevendor")
     public String saveUpdate(Vendor vendor, RedirectAttributes redirectAttributes){
-        vendorServices.save(vendor);
+        try {
+            vendorServices.update(vendor);
+        } catch (VendorNotFoundException e) {
+            e.printStackTrace();
+        }
         redirectAttributes.addFlashAttribute("message", "Vendor saved successfully");
         return "redirect:/vendors";
     }

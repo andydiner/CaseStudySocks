@@ -13,50 +13,6 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title th:text="${user.emailAddress}"></title>
-<!--    <style type="text/css">-->
-
-<!--        .upload{-->
-<!--            height:175px;-->
-<!--            width: 175px;-->
-<!--            position: relative;-->
-<!--            background: url('/imgs/defaultprofile.jpg');-->
-<!--            background-size: 100% 100%;-->
-<!--            margin: 100px auto;-->
-<!--        }-->
-<!--        .myImage{-->
-<!--            cursor: pointer;-->
-<!--            transition: .5s;-->
-<!--            bottom: 0;-->
-<!--            color: transparent;-->
-<!--            width: 100%;-->
-<!--            padding: 15px 100px;-->
-<!--            background: rgba(0,0,0,.5);-->
-<!--            opacity: 0;-->
-<!--        }-->
-<!--        .myImage::-webkit-file-upload-button{-->
-<!--            visibility: hidden;-->
-<!--        }-->
-<!--        .myImage::before{-->
-<!--            content:'\f030';-->
-<!--            color: #ffffff;-->
-<!--            display:inline-block;-->
-<!--            -webkit-user-select: none;-->
-<!--        }-->
-<!--        .myImage::after{-->
-<!--            content: 'Update';-->
-<!--            font-family: 'arial';-->
-<!--            font-weight: bold;-->
-<!--            color: #ffffff;-->
-<!--            display: block;-->
-<!--            top: 70px;-->
-<!--            font-size: 14px;-->
-<!--        }-->
-<!--        .myImage:hover{-->
-<!--            opacity: 1;-->
-<!--        }-->
-
-
-<!--    </style>-->
     <!-- Core theme CSS (includes Bootstrap)-->
     <link th:href="@{~/css/styles.css}" rel="stylesheet" />
     <link th:href="@{~/css/mystyles.css}" rel="stylesheet" />
@@ -70,16 +26,8 @@
     </div>
 </nav>
 <!-- Source https://bootstrapious.com/p/bootstrap-profile-page -->
-<div class="container">
-        <div class="col-lg-7 mx-auto text-white text-center pt-5">
-<!--        <h1 class="display-4">Bootstrap 4 profile page</h1>-->
-<!--        <p class="lead mb-0">Easily create a profile widget using bootstrap 4.</p>-->
-<!--        <p class="lead">Snippet by <a href="https://bootstrapious.com/snippets" class="text-white">-->
-<!--            <u>Bootstrapious</u></a>-->
-<!--        </p>-->
-    </div>
-</div><!-- End -->
 
+<div class="container">
 
 <div class="row py-5 px-4">
     <div class="col-xl-4 col-md-10 col-sm-10 mx-auto">
@@ -96,9 +44,9 @@
                         <h4 class="mt-0 mb-0 d-inline" th:text="${user.firstName}"/>
                         <h4 class="mt-0 mb-0 d-inline" th:text="${user.lastName}"/>
 
-<!--                            <td class="col-3" th:text="${user.emailAddress}"></td>-->
+                        <!--                            <td class="col-3" th:text="${user.emailAddress}"></td>-->
                         <br/>
-                            <td class="col-3" th:text="${user.phoneNumber}"></td>
+                        <h4 class="col-3" th:text="${user.phoneNumber}"/>
                     </div>
                 </div>
             </div>
@@ -140,6 +88,8 @@
         </div><!-- End profile widget -->
 
     </div>
+</div>
+
 </div>
 </body>
 </html>

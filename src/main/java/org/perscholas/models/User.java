@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -40,8 +41,16 @@ public class User implements Serializable {
     @NonNull @NotBlank
     String password;
     String role;
-    String imagePath;
+    String imagePath = "defaultprofile.jpg";
+//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//
+//    List<Orders> ordersList = new ArrayList<>();
 
+
+
+//    public Orders currentOrder(){
+//        return ordersList.get(ordersList.size()-1);
+//    }
     //@ManyToMany
-   // List<Order> orders;
+   // List<Orders> orderssses;
 }

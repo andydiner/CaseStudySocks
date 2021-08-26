@@ -1,11 +1,21 @@
 
-X
-(src/main/test/java/UserServicesTest.java,0\f\0fd12ec208a4fd7714794e7b658dcde876683fff
+f
+6src/main/java/org/perscholas/services/FileService.java,1\7\17cc72afb40689537598de2ffa9a93c821bde9b4
+l
+<src/main/java/org/perscholas/controllers/FileController.java,4\c\4c78abda3f05d910296331c91296288295b30247
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+_
+/src/main/java/org/perscholas/models/Images.java,0\b\0bc2c52b3467cc562e619947a9bcc79f00ce2adc
+b
+2src/main/java/org/perscholas/models/AuthGroup.java,e\8\e86f5370d70020e11a02caa76ba4b0848c80c29b
 \
 ,src/main/java/org/perscholas/CaseRunner.java,3\e\3e9fa9413c6fe64cbaf392257ec7967782d2e233
 r
 Bsrc/main/java/org/perscholas/exceptions/UserNotFoundException.java,a\6\a613e48bd2370febd7679a57614f68e11df92421
-l
-<src/main/java/org/perscholas/controllers/HomeController.java,9\2\9230481382334b1d0273e08968b20b88cb900d1f
-a
-1src/main/java/org/perscholas/dao/IImagesRepo.java,8\c\8cad3ec2c2a810f1104c780ddf239461bd979159
+u
+Esrc/main/java/org/perscholas/exceptions/ProductNotFoundException.java,7\2\72c55ff04fc01e1b121e064ac2fbffbd8978dbdc
+X
+(src/main/test/java/UserServicesTest.java,0\f\0fd12ec208a4fd7714794e7b658dcde876683fff
+V
+&src/main/test/java/VendorRepoTest.java,b\1\b1ef4b80deecc95df967cd433d59b94bbe18d8e6

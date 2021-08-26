@@ -88,7 +88,8 @@ public class UserController {
     }
 
     @GetMapping("/users/edit/{emailAddress}")
-    public String showEditForm(@PathVariable("emailAddress") String email, Model model, RedirectAttributes redirectAttributes){
+    public String showEditForm(@PathVariable("emailAddress") String email,
+                               Model model, RedirectAttributes redirectAttributes){
             try{
                 User user = userServices.get(email);
                 model.addAttribute("user", user);
@@ -102,8 +103,12 @@ public class UserController {
 
     @PostMapping("/users/edit/updateuser")
     public String saveUpdate(User user, RedirectAttributes redirectAttributes){
-            userServices.save(user);
-            redirectAttributes.addFlashAttribute("message", "User saved successfully");
+        try {
+            userServices.update(user);
+        } catch (UserNotFoundException e) {
+            e.printStackTrace();
+        }
+        redirectAttributes.addFlashAttribute("message", "User saved successfully");
         return userRedirect;
     }
 
