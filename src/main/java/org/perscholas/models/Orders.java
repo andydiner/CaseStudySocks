@@ -26,17 +26,15 @@ public class Orders {
     @Column(name = "orderid")
     Integer orderid;
     @NonNull
-    String userEmail;
-    @NonNull
-    String vendorEmail;
     double totalPrice;
-    @ManyToMany(mappedBy = "ordersList")
+    @ManyToOne()
             //name = "orderid", nullable = false, insertable = false, updatable = false
-    List<User> customers = new ArrayList<>();
+    User customer;
 
-    @ManyToMany(mappedBy = "ordersList")
-    //name = "orderid", nullable = false, insertable = false, updatable = false
-    List<User> vendors = new ArrayList<>();
+    @NonNull
+//    @ManyToMany(mappedBy = "ordersList")
+//    //name = "orderid", nullable = false, insertable = false, updatable = false
+//    List<Vendor> vendorList;
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
         @JoinTable(name = "Orders_Product",
             joinColumns = @JoinColumn(name = "orderid", referencedColumnName = "orderid", nullable = false),

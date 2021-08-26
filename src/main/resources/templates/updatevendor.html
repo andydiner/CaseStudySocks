@@ -31,8 +31,7 @@
         <h1>Update Vendor</h1>
         <form action="updatevendor" method="post" th:object="${vendor}">
             <label>Vendor Email</label>
-            <input type="text" class="form-control" name="emailAddress" th:field="*{emailAddress}" />
-            <!--      <label style="color:red" th:each="error:${#fields.errors('email')}" th:text="${error}">error</label>-->
+            <input type="text" class="form-control" name="firstname" th:field="*{emailAddress}" readonly/>
             <label>Vendor First Name</label>
             <input type="text" class="form-control" name="firstname" th:field="*{firstName}" />
             <!--      <label style="color:red" th:each="error:${#fields.errors('name')}" th:text="${error}">error</label>-->

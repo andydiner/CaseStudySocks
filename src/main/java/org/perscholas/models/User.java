@@ -42,17 +42,15 @@ public class User implements Serializable {
     String password;
     String role;
     String imagePath = "defaultprofile.jpg";
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(name = "Order_User",
-            joinColumns = @JoinColumn(name = "emailAddress", referencedColumnName = "emailAddress", nullable = false),
-            inverseJoinColumns = @JoinColumn(name = "orderid", referencedColumnName = "orderid", nullable = false))
-    List<Orders> ordersList = new ArrayList<>();
+//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//
+//    List<Orders> ordersList = new ArrayList<>();
 
 
 
-    public Orders currentOrder(){
-        return ordersList.get(ordersList.size()-1);
-    }
+//    public Orders currentOrder(){
+//        return ordersList.get(ordersList.size()-1);
+//    }
     //@ManyToMany
    // List<Orders> orderssses;
 }

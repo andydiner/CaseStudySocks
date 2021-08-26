@@ -33,6 +33,7 @@
     <div class="text-center mt-5">
         <h1>Update Product</h1>
         <form action="updateproduct" method="post" th:object="${product}">
+            <input type="text" class="form-control" name="name" th:field="*{productid}" readonly/>
             <label> Product Picture (Must Select New Image, Or choose current.)
                 <img th:src="@{~/{path}(path=${product.imagePath})}" alt="..." width="50" class="rounded mb-2 img-thumbnail"/>
             </label>
@@ -42,11 +43,8 @@
             <label>Product Description</label>
             <input type="text" class="form-control" name="description" th:field="*{description}" />
             <!--      <label style="color:red" th:each="error:${#fields.errors('email')}" th:text="${error}">error</label>-->
-            <label>Product Quantity Available</label>
-            <input type="text" class="form-control" name="quantityInStock" th:field="*{quantityInStock}" />
-            <!--      <label style="color:red" th:each="error:${#fields.errors('name')}" th:text="${error}">error</label>-->
-            <label>Product Quantity</label>
-            <input type="text" class="form-control" name="totalQuantity" th:field="*{totalQuantity}" />
+            <label>Product Vendor</label>
+            <input type="text" class="form-control" name="vendor" th:field="*{vendor}" />
             <!--      <label style="color:red" th:each="error:${#fields.errors('name')}" th:text="${error}">error</label>-->
             <label>Product Price</label>
             <input type="text" class="form-control" name="price" th:field="*{price}" />

@@ -33,22 +33,22 @@
             <thead>
             <tr>
                 <th class="col-3">User Email</th>
-                <th class="col-3">Vendor Email</th>
-                <th class="col-3">Total Price</th>
+                <th class="col-3">Order Amount</th>
+<!--                <th class="col-3">Total Price</th>-->
 <!--                <th class="col-3">Total Stock</th>-->
 <!--                <th class="col-3">Price</th>-->
             </tr>
             </thead>
             <tbody>
             <tr th:each="o:${orders}" >
-                <td class="col-3" th:text="${o.userEmail}"></td>
-                <td class="col-3" th:text="${o.vendorEmail}"></td>
+                <td class="col-3" th:text="${o.customer.getEmailAddress()}"></td>
                 <td class="col-3" th:text="${o.totalPrice}"></td>
+<!--                <td class="col-3" th:text="${o.customer.getIm}"></td>-->
 <!--                <td class="col-3" th:text="${o.totalQuantity}"></td>-->
 <!--                <td class="col-3" th:text="${o.price}"></td>-->
 <!--                <td>-->
 <!--&lt;!&ndash;                    <a class="h4" th:href="@{'/orders/edit/' + ${o.orderid}}">Edit</a>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <a class="h4" th:href="@{'/orders/delete/' + ${o.orderid}}">Delete</a>&ndash;&gt;-->
+<!--                    <a class="h4" th:href="@{'/orders/delete/' + ${o.orderid}}">Delete</a>-->
 <!--                </td>-->
             </tr>
             </tbody>

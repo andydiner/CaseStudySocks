@@ -23,10 +23,15 @@ public class OrderController {
     @Autowired
     public OrderController(OrderServices orderServices){
         this.orderServices = orderServices;
+        List<Orders> allOrders = orderServices.getAllOrders();
+        for(Orders o: allOrders){
+            orderServices.calculateTotal((o.getOrderid()));
+        }
     }
 
     @ModelAttribute("cart")
     public List<Orders> initOrders(){
+
         return new ArrayList<Orders>();
     }
 
@@ -53,7 +58,7 @@ public class OrderController {
 
     @PostMapping("/orders/registerorder")
     public String postRegisterOrders(Model model, @ModelAttribute("order") Orders order){
-        log.warn("PRODUCT NAME: " + order.getUserEmail() + " PRODUCT ID: " + order.getVendorEmail() + order.getTotalPrice());
+        log.warn("CUSTOMER NAME: " + order.getCustomer() + " ORDER PRICE: " + order.getTotalPrice());
 
         orderServices.saveOrder(order);
         return orderRedirect;

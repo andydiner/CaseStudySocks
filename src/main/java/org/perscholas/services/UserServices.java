@@ -70,6 +70,20 @@ public class UserServices {
         throw new UserNotFoundException("Could not find any users with email: " + email);
     }
 
+    public void update(User user) throws UserNotFoundException{
+        Optional<User> getUser = userRepo.findById(user.getEmailAddress());
+        if(getUser.isPresent()){
+            getUser.get().setPhoneNumber(user.getPhoneNumber());
+            getUser.get().setFirstName(user.getFirstName());
+            getUser.get().setLastName(user.getLastName());
+            getUser.get().setPassword(user.getPassword());
+
+
+        }
+        throw new UserNotFoundException("Could not find any users with email: " + user.getEmailAddress());
+
+    }
+
     public void delete(String email) throws UserNotFoundException {
         Optional<User> getUser = userRepo.findById(email);
         if(getUser.isPresent()) {

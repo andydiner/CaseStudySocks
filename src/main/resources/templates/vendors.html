@@ -61,7 +61,7 @@
         <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
           <div class="d-flex flex-column"><span class="rating">Phone Number</span> <span class="number1" th:text="${v.phoneNumber}"></span></div>
 <!--          <div class="d-flex flex-column"> <span class="followers">Followers</span> <span class="number2">980</span> </div>-->
-          <div class="d-flex flex-column"> <span class="rating">Orders Handled</span> <span class="number3" th:text="${v.getOrdersList().size()}"></span> </div>
+          <div class="d-flex flex-column"> <span class="rating">Money Earned</span> <span class="number3" th:text="${v.moneyEarned}"></span> </div>
         </div>
         <div class="button mt-2 d-flex flex-row align-items-center">
           <button class="btn btn-sm btn-outline-primary w-100"><a class="h4" th:href="@{'/vendors/edit/' + ${v.emailAddress}}">Edit</a></button>

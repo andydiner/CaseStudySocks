@@ -2,7 +2,9 @@ package org.perscholas.services;
 
 import lombok.extern.slf4j.Slf4j;
 import org.perscholas.dao.IVendorRepo;
+import org.perscholas.exceptions.OrderNotFoundException;
 import org.perscholas.exceptions.VendorNotFoundException;
+import org.perscholas.models.Orders;
 import org.perscholas.models.Vendor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -60,6 +62,20 @@ public class VendorServices {
         }
         throw new VendorNotFoundException("Could not find any vendors with email: " + email);
     }
+
+    public void update(Vendor vendor) throws VendorNotFoundException {
+        Optional<Vendor> getVendor = vendorRepo.findById(vendor.getEmailAddress());
+        if(getVendor.isPresent()){
+            getVendor.get().setFirstName(vendor.getFirstName());
+            getVendor.get().setLastName(vendor.getLastName());
+            getVendor.get().setPassword(vendor.getPassword());
+            getVendor.get().setPhoneNumber(vendor.getPhoneNumber());
+
+
+        }
+        throw new VendorNotFoundException("Could not find any users with ordersid: " + vendor.getEmailAddress());
+    }
+
 
     public void delete(String email) throws VendorNotFoundException {
         Optional<Vendor> getVendor = vendorRepo.findById(email);

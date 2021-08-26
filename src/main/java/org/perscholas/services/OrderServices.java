@@ -5,6 +5,8 @@ import org.perscholas.dao.IOrderRepo;
 import org.perscholas.exceptions.OrderNotFoundException;
 import org.perscholas.models.Orders;
 import org.perscholas.models.Product;
+import org.perscholas.models.User;
+import org.perscholas.models.Vendor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,16 +36,21 @@ public class OrderServices {
         return orders;
     }
 
-    public Orders getOrderByUserEmail(String email){
-        Orders orders = orderRepo.findOrderByUserEmail(email);
+    public Orders getCurrentOrderForCustomer(User customer){
+        Orders orders = orderRepo.findOrderByCustomer(customer);
         log.warn(String.valueOf(orders));
         return orders;
     }
-    public Orders getOrderByVendorEmail(String email){
-        Orders orders = orderRepo.findOrderByVendorEmail(email);
-        log.warn(String.valueOf(orders));
-        return orders;
-    }
+//    public List<Orders> getAllOrderForCustomer(User customer){
+//        List<Orders> orders = orderRepo.findAllOrderForCustomer(customer);
+//        log.warn(String.valueOf(orders));
+//        return orders;
+//    }
+//    public List<Orders> getOrderByVendorList(List<Vendor> vendors){
+//        List<Orders> orders = orderRepo.findOrderByVendorList(vendors);
+//        log.warn(String.valueOf(orders));
+//        return orders;
+//    }
 
     public List<Orders> getAllOrders() {
         List<Orders> orders = orderRepo.findAll();
@@ -88,6 +95,8 @@ public class OrderServices {
         for(int i = 0; i < productList.size(); i++){
             totalPrice += productList.get(i).getPrice();
         }
+        log.warn("ID: " + getOrder.get().getOrderid());
+        log.warn("Total Price: " + totalPrice);
         return totalPrice;
 
     }

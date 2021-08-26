@@ -43,6 +43,8 @@ public class Product {
     String imagePath = "defaultsocks.jpg";
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "productList")
     List<Orders> orderList;
+    @ManyToOne
+    Vendor vendor;
 
 
 }

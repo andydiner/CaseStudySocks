@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Register User</title>
+    <title>Add Product</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -28,26 +28,29 @@
 <!-- Page content-->
 <div class="container">
     <div class="text-center mt-5">
-        <h1>Register User</h1>
-        <form action="registeruser" method="post"  th:object="${product}">
+        <h1>Add Product</h1>
+        <form action="registerproduct" method="post"  th:object="${product}">
 <!--            <form th:action="@{/uploadfile}" method="post" enctype="multipart/form-data">-->
 
 <!--            <label> User Profile Picture</label>-->
 <!--            <input class="form-control" th:type="file" name="imagePath" th:field = "*{imagePath}" enctype="multipart/form-data"/>-->
-            <label>User Email</label>
-            <input type="text" class="form-control" name="emailAddress" th:field="*{emailAddress}" />
+            <label>Product Name</label>
+            <input type="text" class="form-control" name="name" th:field="*{name}" />
             <!--      <label style="color:red" th:each="error:${#fields.errors('email')}" th:text="${error}">error</label>-->
-            <label>User First Name</label>
-            <input type="text" class="form-control" name="firstname" th:field="*{firstName}" />
+            <label>Product Description</label>
+            <input type="text" class="form-control" name="description" th:field="*{description}" />
             <!--      <label style="color:red" th:each="error:${#fields.errors('name')}" th:text="${error}">error</label>-->
-            <label>User Last Name</label>
-            <input type="text" class="form-control" name="lastname" th:field="*{lastName}" />
+            <label>Product Total Quantity</label>
+            <input type="text" class="form-control" name="totalQuantity" th:field="*{totalQuantity}" />
             <!--      <label style="color:red" th:each="error:${#fields.errors('name')}" th:text="${error}">error</label>-->
-            <label>User Phone Number</label>
-            <input type="text" class="form-control" name="phonenumber" th:field="*{phoneNumber}" />
+            <label>Product Quantity In Stock</label>
+            <input type="text" class="form-control" name="quantityInStock" th:field="*{quantityInStock}" />
             <!--      <label style="color:red" th:each="error:${#fields.errors('name')}" th:text="${error}">error</label>-->
-            <label>User Password</label>
-            <input type="text" class="form-control" name="password" th:field="*{password}" />
+            <label>Product Price</label>
+            <input type="text" class="form-control" name="price" th:field="*{price}" />
+            <label>Product Owner</label>
+            <input type="text" class="form-control" name="vendor" th:field="*{vendor}" />
+
             <!--      <label style="color:red" th:each="error:${#fields.errors('password')}" th:text="${error}">error</label>-->
             <input type="submit" name="Submit" />
         </form>

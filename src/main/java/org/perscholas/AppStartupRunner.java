@@ -90,8 +90,8 @@ public class AppStartupRunner implements CommandLineRunner {
         Vendor vendor4 = new Vendor("alice@wonderland.com",
                 "Alice", "Wonderland", "1234567890",
                 defPass);
-        vendorRepo.save(vendor1);
-        vendorRepo.save(vendor2);
+        vendorRepo.save(vendor1).setImagePath("flamingo.jpg");
+        vendorRepo.save(vendor2).setImagePath("nancy.jpg");
         vendorRepo.save(vendor3);
         vendorRepo.save(vendor4);
 
@@ -110,57 +110,69 @@ public class AppStartupRunner implements CommandLineRunner {
 
         log.info("****Adding Products****");
 
-        Product frog = new Product("Blue Socks", "Light fabric, sewn in France", 50, 39, 15.99);
-        frog.setImagePath("navy-blue-socks-daft-punk.jpg");
-        Product eggs = new Product("Basic White Socks", "Found in the Target Clearance Aisle", 100, 88, 2.99);
+        Product product1 = new Product("Blue Socks", "Light fabric, sewn in France", 50, 39, 15.99);
+        product1.setImagePath("navy-blue-socks-daft-punk.jpg");
+        Product product2 = new Product("Basic White Socks", "Found in the Target Clearance Aisle", 100, 88, 2.99);
+        Product product3 = new Product("Christmas Socks", "Comfortable red & green socks", 64, 32, 6.99);
+        product3.setImagePath("christmas.jpg");
+
+        product1.setVendor(vendor2);
+        product2.setVendor(vendor1);
+        product3.setVendor(vendor2);
+
+
 
         log.info("****Finished Adding Products****");
-
-        productRepo.save(frog);
-        productRepo.save(eggs);
-
-        Orders myOrder =  new Orders("adiner@asu.edu", "gary@Zoofood.com");
-        Orders myOrder2 = new Orders("Billy@gmail.com", "nancy@gmail.com");
-
-        Orders myOrder3 = new Orders();
-
-//        List<Product> frogEgg = new ArrayList<>();
-//        frogEgg.add(frog);
-//        frogEgg.add(eggs);
-//        log.warn("List of Products to be added: " + frogEgg.toString());
-        // myOrder.setProductList(frogEgg);
-
-
-        orderRepo.save(myOrder);
-        orderRepo.save(myOrder2);
-
-        myOrder.getProductList().add(frog);
-
-        myOrder.getProductList().add(eggs);
-
 //
-//        frog.getOrderList().add(myOrder);
-//        eggs.getOrderList().add(myOrder);
+        productRepo.save(product1);
+        productRepo.save(product2);
+        productRepo.save(product3);
 
-        user5.getOrdersList().add(myOrder);
+        log.warn("Made it past product Save");
+
+
+        Orders order1 = new Orders();
+        Orders order2 = new Orders();
+        Orders order3 = new Orders();
+        Orders order4 = new Orders();
+        Orders order5 = new Orders();
+
+        order1.getProductList().add(product1);
+        order1.getProductList().add(product3);
+        order2.getProductList().add(product2);
+        order3.getProductList().add(product2);
+        order3.getProductList().add(product2);
+        order3.getProductList().add(product2);
+        order4.getProductList().add(product3);
+        order4.getProductList().add(product3);
+        order4.getProductList().add(product3);
+        order4.getProductList().add(product3);
+        order5.getProductList().add(product1);
+        order1.setCustomer(user1);
+        order2.setCustomer(user2);
+        order3.setCustomer(user5);
+        order4.setCustomer(user1);
+        order5.setCustomer(user4);
+
+
+        orderRepo.save(order1);
+        orderRepo.save(order2);
+        orderRepo.save(order3);
+        orderRepo.save(order4);
+        orderRepo.save(order5);
+        userRepo.save(user1);
+        userRepo.save(user2);
+        userRepo.save(user3);
+        userRepo.save(user4);
         userRepo.save(user5);
-        vendor1.getOrdersList().add(myOrder);
-        vendor1.getOrdersList().add(myOrder3);
-        if(myOrder3.getVendorEmail() == null){
-            myOrder3.setVendorEmail(vendor1.getEmailAddress());
-        }
+
+
+
+        userRepo.save(user5);
+        userRepo.save(user3);
+
         vendorRepo.save(vendor1);
-
-
-
-
-//
-//        myOrder.getCustomers().add(user1);
-//        myOrder.getCustomers().add(user5);
-
-        log.warn(user5.getEmailAddress() + "'s OrderList Size: " + user5.getOrdersList().toString());
-        log.warn("Order at 1: " + String.valueOf(user5.getOrdersList().get(0).getProductList().get(1).getName()));
-
+        vendorRepo.save(vendor2);
 
 
 

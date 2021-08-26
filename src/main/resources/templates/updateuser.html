@@ -33,10 +33,11 @@
             <label> User Profile Picture <img th:src="@{~/{path}(path=${user.imagePath})}" alt="..." width="50" class="rounded mb-2 img-thumbnail"/></label>
             <input class="form-control" th:type="file" name="imagePath" th:field = "*{imagePath}" enctype="multipart/form-data"/>
             <label>User Email</label>
-            <input type="text" class="form-control" name="emailAddress" th:field="*{emailAddress}" />
-            <!--      <label style="color:red" th:each="error:${#fields.errors('email')}" th:text="${error}">error</label>-->
+            <input type="text" class="form-control" name="emailAddress" th:field="*{emailAddress}" readonly/>
             <label>User First Name</label>
             <input type="text" class="form-control" name="firstname" th:field="*{firstName}" />
+            <input type="text" class="form-control" name="emailAddress" th:field="*{emailAddress}" readonly/>
+
             <!--      <label style="color:red" th:each="error:${#fields.errors('name')}" th:text="${error}">error</label>-->
             <label>User Last Name</label>
             <input type="text" class="form-control" name="lastname" th:field="*{lastName}" />

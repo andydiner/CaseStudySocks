@@ -50,6 +50,16 @@ public class ProductController {
         List<Product> products = productServices.getAllProducts();
         log.warn("Products: " + products.size());
         model.addAttribute("products", products);
+        User user = userServices.getUserByEmail(email);
+        log.warn("USER EMAIL: " + user.getEmailAddress());
+        Orders order = orderServices.getCurrentOrderForCustomer(user);
+        log.warn("CURRENT ORDER " + order.toString());
+        List<Orders> allOrders = orderServices.getAllOrders();
+        log.warn("AllOrders list initialized.");
+        for(Orders o: allOrders){
+            log.warn("Starting to Calculate all totals");
+            orderServices.calculateTotal((o.getOrderid()));
+        }
         return "products";
     }
 
@@ -74,10 +84,10 @@ public class ProductController {
         return productRedirect;
     }
 
-//    @GetMapping("/productbyorder")
-//    public String getProductByOrder(Model model){
+//    @GetMapping("/productsbyvendor")
+//    public String getProductByVendor(Model model){
 //        model.addAttribute("product", new Product());
-//        return "productbyemail";
+//        return "productbyvendor";
 //    }
 
 //    @PostMapping("/productbyorder")
@@ -108,7 +118,13 @@ public class ProductController {
 
     @PostMapping("/products/edit/updateproduct")
     public String saveUpdate(Product product, RedirectAttributes redirectAttributes){
-        productServices.save(product);
+        try {
+            productServices.update(product);
+
+        } catch (ProductNotFoundException e) {
+            e.printStackTrace();
+        }
+
         redirectAttributes.addFlashAttribute("message", "Product saved successfully");
         return productRedirect;
     }
@@ -135,15 +151,14 @@ public class ProductController {
             model.addAttribute("product", product);
             User user = userServices.getUserByEmail(email);
             model.addAttribute("user", user);
+            log.warn("The Owner of " + product.getName() + " is: " + productServices.findVendorEmail(1).toString());
 
             Orders currentOrder = new Orders();
-              if(user.getOrdersList().isEmpty()){
+              if(currentOrder == null){
                   currentOrder = new Orders();
-                  currentOrder.getCustomers().add(user);
-                 // currentOrder = new Orders(email, "gary@zoofood.com");
-
+                  currentOrder.setCustomer(user);
               }else {
-                  currentOrder = user.currentOrder();
+                  currentOrder = orderServices.getCurrentOrderForCustomer(user);
               }
               currentOrder.getProductList().add(product);
               log.warn(
@@ -170,9 +185,15 @@ public class ProductController {
 
     @GetMapping("/cart")
     public String getCart(Model model){
-        Orders order = userServices.getUserByEmail(email).currentOrder();
+        log.warn("Entered Cart");
+        User user = userServices.getUserByEmail(email);
+        log.warn("USER EMAIL: " + user.getEmailAddress());
+        Orders order = orderServices.getCurrentOrderForCustomer(user);
+        log.warn("CURRENT ORDER " + order.toString());
         List<Orders> allOrders = orderServices.getAllOrders();
+        log.warn("AllOrders list initialized.");
         for(Orders o: allOrders){
+            log.warn("Starting to Calculate all totals");
             orderServices.calculateTotal((o.getOrderid()));
         }
        // double total = orderServices.calculateTotal(order.getOrderid());
@@ -192,13 +213,14 @@ public class ProductController {
     @GetMapping("/cart/delete/{productid}")
     public String deleteFromCart(@PathVariable("productid") Integer productId, Model model,
                                 RedirectAttributes redirectAttributes){
-        Orders order =  userServices.getUserByEmail(email).currentOrder();
-            Product product = productServices.getProductByID(productId);
+        User user = userServices.getUserByEmail(email);
+        Orders order = orderServices.getCurrentOrderForCustomer(user);
+        Product product = productServices.getProductByID(productId);
             log.warn("Trying to remove " + productServices.getProductByID(productId).getName());
             order.getProductList().remove(product);
            // orderServices.calculateTotal(order.getOrderid());
           //  log.warn("Total Price: " + orderServices.calculateTotal(order.getOrderid()));
-        List<Product> products = userServices.getUserByEmail(email).currentOrder().getProductList();
+        List<Product> products = orderServices.getCurrentOrderForCustomer(user).getProductList();
 
 
         log.warn("Product List Post Delete: ");

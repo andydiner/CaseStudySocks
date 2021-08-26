@@ -35,9 +35,11 @@
                 <th class="col-3">Display</th>
                 <th class="col-3">Name</th>
                 <th class="col-3">Description</th>
-                <th class="col-3">Quantity Available</th>
-                <th class="col-3">Total Stock</th>
+<!--                <th class="col-3">Quantity Available</th>-->
+<!--                <th class="col-3">Total Stock</th>-->
                 <th class="col-3">Price</th>
+                <th class="col-3">Vendor</th>
+
 
             </tr>
             </thead>
@@ -46,12 +48,14 @@
                 <td class="col-3"> <img th:src="${p.imagePath}" alt="..." width="130" class="rounded mb-2 img-thumbnail"/> </td>
                 <td class="col-3" th:text="${p.name}"></td>
                 <td class="col-3" th:text="${p.description}"></td>
-                <td class="col-3" th:text="${p.getQuantityInStock}"></td>
-                <td class="col-3" th:text="${p.totalQuantity}"></td>
+<!--                <td class="col-3" th:text="${p.getQuantityInStock}"></td>-->
+<!--                <td class="col-3" th:text="${p.totalQuantity}"></td>-->
                 <td class="col-3" th:text="${p.price}"></td>
+                <td class="col-3" th:text="${p.vendor.getEmailAddress()}"></td>
+
                 <td>
                     <a class="h4" th:href="@{'/products/add/' + ${p.productid}}">Add</a>
-<!--                    <a class="h4" th:href="@{'/products/delete/' + ${p.productid}}">Delete</a>-->
+                    <a class="h4" th:href="@{'/products/edit/' + ${p.productid}}">Edit</a>
                 </td>
             </tr>
             </tbody>

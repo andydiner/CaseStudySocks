@@ -35,10 +35,15 @@ public class Vendor implements Serializable {
     @NonNull @NotBlank
     String password;
     String imagePath ="defaultprofile.jpg";
+    double moneyEarned;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(name = "Order_Vendor",
-            joinColumns = @JoinColumn(name = "emailAddress", referencedColumnName = "emailAddress", nullable = false),
-            inverseJoinColumns = @JoinColumn(name = "orderid", referencedColumnName = "orderid", nullable = false))
-    List<Orders> ordersList = new ArrayList<>();
+//    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinTable(name = "Order_Vendor",
+//            joinColumns = @JoinColumn(name = "emailAddress", referencedColumnName = "emailAddress", nullable = false),
+//            inverseJoinColumns = @JoinColumn(name = "orderid", referencedColumnName = "orderid", nullable = false))
+//    List<Orders> ordersList = new ArrayList<>();
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "vendor")
+    List<Product> productList = new ArrayList<>();
+
 }
