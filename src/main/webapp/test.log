@@ -24573,3 +24573,2108 @@ Caused by: java.sql.SQLException: Table 'sockcase.product' doesn't exist
     drop table if exists vendor
 2021-08-26 00:25:44.876  INFO 10548 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-08-26 00:25:44.893  INFO 10548 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-08-26 00:30:23.004  INFO 14848 --- [restartedMain] org.perscholas.CaseRunner                : Starting CaseRunner using Java 11.0.12 on DESKTOP-D44LRSK with PID 14848 (C:\Users\14802\IdeaProjects\CaseStudySocks\CaseStudySocks\target\classes started by 14802 in C:\Users\14802\IdeaProjects\CaseStudySocks\CaseStudySocks)
+2021-08-26 00:30:23.009  INFO 14848 --- [restartedMain] org.perscholas.CaseRunner                : No active profile set, falling back to default profiles: default
+2021-08-26 00:30:23.056  INFO 14848 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-08-26 00:30:23.056  INFO 14848 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-08-26 00:30:23.952  INFO 14848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-26 00:30:24.060  INFO 14848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93 ms. Found 6 JPA repository interfaces.
+2021-08-26 00:30:24.457  INFO 14848 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-26 00:30:24.463  INFO 14848 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-26 00:30:24.463  INFO 14848 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-08-26 00:30:24.515  INFO 14848 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-26 00:30:24.515  INFO 14848 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1458 ms
+2021-08-26 00:30:24.593  INFO 14848 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-26 00:30:24.625  INFO 14848 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-08-26 00:30:24.698  INFO 14848 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-26 00:30:24.763  INFO 14848 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-26 00:30:24.795  INFO 14848 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-26 00:30:24.805  INFO 14848 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB103Dialect
+2021-08-26 00:30:25.233 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table orders 
+       drop 
+       foreign key if exists FKqo6tljyo2vk0qdsbx1fdgb39o
+2021-08-26 00:30:25.238  WARN 14848 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table orders 
+       drop 
+       foreign key if exists FKqo6tljyo2vk0qdsbx1fdgb39o" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table orders 
+       drop 
+       foreign key if exists FKqo6tljyo2vk0qdsbx1fdgb39o" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.7.jar:5.3.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.7.jar:5.3.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.7.jar:5.3.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:438) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:337) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1336) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1325) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.perscholas.CaseRunner.main(CaseRunner.java:19) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.5.0.jar:2.5.0]
+Caused by: java.sql.SQLSyntaxErrorException: (conn=5297) Table 'sockcase.orders' doesn't exist
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.create(ExceptionFactory.java:155) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:274) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.executeInternal(MariaDbStatement.java:363) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.execute(MariaDbStatement.java:501) ~[mariadb-java-client-2.7.3.jar:na]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	... 40 common frames omitted
+Caused by: org.mariadb.jdbc.internal.util.exceptions.MariaDbSqlException: Table 'sockcase.orders' doesn't exist
+	at org.mariadb.jdbc.internal.util.exceptions.MariaDbSqlException.of(MariaDbSqlException.java:34) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.exceptionWithQuery(AbstractQueryProtocol.java:194) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:262) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.executeInternal(MariaDbStatement.java:357) ~[mariadb-java-client-2.7.3.jar:na]
+	... 44 common frames omitted
+Caused by: java.sql.SQLException: Table 'sockcase.orders' doesn't exist
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readErrorPacket(AbstractQueryProtocol.java:1694) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readPacket(AbstractQueryProtocol.java:1556) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.getResult(AbstractQueryProtocol.java:1519) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:256) ~[mariadb-java-client-2.7.3.jar:na]
+	... 45 common frames omitted
+
+2021-08-26 00:30:25.238 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table orders_product 
+       drop 
+       foreign key if exists FK1xb6dpkg6wnqq6sul44firfq7
+2021-08-26 00:30:25.240  WARN 14848 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table orders_product 
+       drop 
+       foreign key if exists FK1xb6dpkg6wnqq6sul44firfq7" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table orders_product 
+       drop 
+       foreign key if exists FK1xb6dpkg6wnqq6sul44firfq7" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.7.jar:5.3.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.7.jar:5.3.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.7.jar:5.3.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:438) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:337) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1336) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1325) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.perscholas.CaseRunner.main(CaseRunner.java:19) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.5.0.jar:2.5.0]
+Caused by: java.sql.SQLSyntaxErrorException: (conn=5297) Table 'sockcase.orders_product' doesn't exist
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.create(ExceptionFactory.java:155) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:274) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.executeInternal(MariaDbStatement.java:363) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.execute(MariaDbStatement.java:501) ~[mariadb-java-client-2.7.3.jar:na]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	... 40 common frames omitted
+Caused by: org.mariadb.jdbc.internal.util.exceptions.MariaDbSqlException: Table 'sockcase.orders_product' doesn't exist
+	at org.mariadb.jdbc.internal.util.exceptions.MariaDbSqlException.of(MariaDbSqlException.java:34) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.exceptionWithQuery(AbstractQueryProtocol.java:194) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:262) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.executeInternal(MariaDbStatement.java:357) ~[mariadb-java-client-2.7.3.jar:na]
+	... 44 common frames omitted
+Caused by: java.sql.SQLException: Table 'sockcase.orders_product' doesn't exist
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readErrorPacket(AbstractQueryProtocol.java:1694) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readPacket(AbstractQueryProtocol.java:1556) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.getResult(AbstractQueryProtocol.java:1519) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:256) ~[mariadb-java-client-2.7.3.jar:na]
+	... 45 common frames omitted
+
+2021-08-26 00:30:25.240 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table orders_product 
+       drop 
+       foreign key if exists FKkoh14xjmb07kjyne2vsw5kej3
+2021-08-26 00:30:25.242  WARN 14848 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table orders_product 
+       drop 
+       foreign key if exists FKkoh14xjmb07kjyne2vsw5kej3" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table orders_product 
+       drop 
+       foreign key if exists FKkoh14xjmb07kjyne2vsw5kej3" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.7.jar:5.3.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.7.jar:5.3.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.7.jar:5.3.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:438) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:337) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1336) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1325) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.perscholas.CaseRunner.main(CaseRunner.java:19) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.5.0.jar:2.5.0]
+Caused by: java.sql.SQLSyntaxErrorException: (conn=5297) Table 'sockcase.orders_product' doesn't exist
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.create(ExceptionFactory.java:155) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:274) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.executeInternal(MariaDbStatement.java:363) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.execute(MariaDbStatement.java:501) ~[mariadb-java-client-2.7.3.jar:na]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	... 40 common frames omitted
+Caused by: org.mariadb.jdbc.internal.util.exceptions.MariaDbSqlException: Table 'sockcase.orders_product' doesn't exist
+	at org.mariadb.jdbc.internal.util.exceptions.MariaDbSqlException.of(MariaDbSqlException.java:34) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.exceptionWithQuery(AbstractQueryProtocol.java:194) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:262) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.executeInternal(MariaDbStatement.java:357) ~[mariadb-java-client-2.7.3.jar:na]
+	... 44 common frames omitted
+Caused by: java.sql.SQLException: Table 'sockcase.orders_product' doesn't exist
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readErrorPacket(AbstractQueryProtocol.java:1694) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readPacket(AbstractQueryProtocol.java:1556) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.getResult(AbstractQueryProtocol.java:1519) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:256) ~[mariadb-java-client-2.7.3.jar:na]
+	... 45 common frames omitted
+
+2021-08-26 00:30:25.242 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table product 
+       drop 
+       foreign key if exists FKr4qw540gvknjwfvwr8g11rnd6
+2021-08-26 00:30:25.244  WARN 14848 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table product 
+       drop 
+       foreign key if exists FKr4qw540gvknjwfvwr8g11rnd6" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table product 
+       drop 
+       foreign key if exists FKr4qw540gvknjwfvwr8g11rnd6" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.7.jar:5.3.7]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.7.jar:5.3.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.7.jar:5.3.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.7.jar:5.3.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:438) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:337) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1336) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1325) ~[spring-boot-2.5.0.jar:2.5.0]
+	at org.perscholas.CaseRunner.main(CaseRunner.java:19) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.5.0.jar:2.5.0]
+Caused by: java.sql.SQLSyntaxErrorException: (conn=5297) Table 'sockcase.product' doesn't exist
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.create(ExceptionFactory.java:155) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:274) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.executeInternal(MariaDbStatement.java:363) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.execute(MariaDbStatement.java:501) ~[mariadb-java-client-2.7.3.jar:na]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	... 40 common frames omitted
+Caused by: org.mariadb.jdbc.internal.util.exceptions.MariaDbSqlException: Table 'sockcase.product' doesn't exist
+	at org.mariadb.jdbc.internal.util.exceptions.MariaDbSqlException.of(MariaDbSqlException.java:34) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.exceptionWithQuery(AbstractQueryProtocol.java:194) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:262) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.executeInternal(MariaDbStatement.java:357) ~[mariadb-java-client-2.7.3.jar:na]
+	... 44 common frames omitted
+Caused by: java.sql.SQLException: Table 'sockcase.product' doesn't exist
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readErrorPacket(AbstractQueryProtocol.java:1694) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readPacket(AbstractQueryProtocol.java:1556) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.getResult(AbstractQueryProtocol.java:1519) ~[mariadb-java-client-2.7.3.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:256) ~[mariadb-java-client-2.7.3.jar:na]
+	... 45 common frames omitted
+
+2021-08-26 00:30:25.244 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists auth_group
+2021-08-26 00:30:25.248 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists images
+2021-08-26 00:30:25.249 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists orders
+2021-08-26 00:30:25.250 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists orders_product
+2021-08-26 00:30:25.251 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists product
+2021-08-26 00:30:25.252 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists user
+2021-08-26 00:30:25.252 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table if exists vendor
+2021-08-26 00:30:25.255 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table auth_group (
+       aid bigint not null auto_increment,
+        a_auth_group varchar(255),
+        a_username varchar(255),
+        primary key (aid)
+    ) engine=InnoDB
+2021-08-26 00:30:25.275 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table images (
+       id bigint not null auto_increment,
+        image_name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+2021-08-26 00:30:25.285 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table orders (
+       orderid integer not null auto_increment,
+        total_price double precision not null,
+        customer_email_address varchar(255),
+        primary key (orderid)
+    ) engine=InnoDB
+2021-08-26 00:30:25.296 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table orders_product (
+       orderid integer not null,
+        productid integer not null
+    ) engine=InnoDB
+2021-08-26 00:30:25.308 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table product (
+       productid integer not null auto_increment,
+        description varchar(255),
+        image_path varchar(255),
+        name varchar(255),
+        price double precision,
+        quantity_in_stock integer,
+        total_quantity integer,
+        vendor_email_address varchar(255),
+        primary key (productid)
+    ) engine=InnoDB
+2021-08-26 00:30:25.320 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table user (
+       email_address varchar(255) not null,
+        first_name varchar(255),
+        image_path varchar(255),
+        last_name varchar(255),
+        password varchar(255),
+        phone_number varchar(255),
+        role varchar(255),
+        primary key (email_address)
+    ) engine=InnoDB
+2021-08-26 00:30:25.332 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table vendor (
+       email_address varchar(255) not null,
+        first_name varchar(255),
+        image_path varchar(255),
+        last_name varchar(255),
+        money_earned double precision not null,
+        password varchar(255),
+        phone_number varchar(255),
+        primary key (email_address)
+    ) engine=InnoDB
+2021-08-26 00:30:25.344 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table orders 
+       add constraint FKqo6tljyo2vk0qdsbx1fdgb39o 
+       foreign key (customer_email_address) 
+       references user (email_address)
+2021-08-26 00:30:25.385 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table orders_product 
+       add constraint FK1xb6dpkg6wnqq6sul44firfq7 
+       foreign key (productid) 
+       references product (productid)
+2021-08-26 00:30:25.420 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table orders_product 
+       add constraint FKkoh14xjmb07kjyne2vsw5kej3 
+       foreign key (orderid) 
+       references orders (orderid)
+2021-08-26 00:30:25.467 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table product 
+       add constraint FKr4qw540gvknjwfvwr8g11rnd6 
+       foreign key (vendor_email_address) 
+       references vendor (email_address)
+2021-08-26 00:30:25.506  INFO 14848 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-26 00:30:25.512  INFO 14848 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-26 00:30:25.757  WARN 14848 --- [restartedMain] org.perscholas.AppStartupRunner          : StartupRunner Constructed!
+2021-08-26 00:30:25.847 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        orders0_.orderid as orderid1_2_,
+        orders0_.customer_email_address as customer3_2_,
+        orders0_.total_price as total_pr2_2_ 
+    from
+        orders orders0_
+2021-08-26 00:30:25.858  WARN 14848 --- [restartedMain] org.perscholas.services.OrderServices    : []
+2021-08-26 00:30:26.031  INFO 14848 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-08-26 00:30:26.128  INFO 14848 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-08-26 00:30:26.151  INFO 14848 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-26 00:30:26.159  INFO 14848 --- [restartedMain] org.perscholas.CaseRunner                : Started CaseRunner in 3.696 seconds (JVM running for 4.871)
+2021-08-26 00:30:26.160  INFO 14848 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-08-26 00:30:26.163  INFO 14848 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Starting Application****
+2021-08-26 00:30:26.163  INFO 14848 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Adding Users****
+2021-08-26 00:30:26.174 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        user0_.email_address as email_ad1_5_0_,
+        user0_.first_name as first_na2_5_0_,
+        user0_.image_path as image_pa3_5_0_,
+        user0_.last_name as last_nam4_5_0_,
+        user0_.password as password5_5_0_,
+        user0_.phone_number as phone_nu6_5_0_,
+        user0_.role as role7_5_0_ 
+    from
+        user user0_ 
+    where
+        user0_.email_address=?
+2021-08-26 00:30:26.175 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-26 00:30:26.187 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        user0_.email_address as email_ad1_5_0_,
+        user0_.first_name as first_na2_5_0_,
+        user0_.image_path as image_pa3_5_0_,
+        user0_.last_name as last_nam4_5_0_,
+        user0_.password as password5_5_0_,
+        user0_.phone_number as phone_nu6_5_0_,
+        user0_.role as role7_5_0_ 
+    from
+        user user0_ 
+    where
+        user0_.email_address=?
+2021-08-26 00:30:26.187 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [david@gmail.com]
+2021-08-26 00:30:26.188 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        user0_.email_address as email_ad1_5_0_,
+        user0_.first_name as first_na2_5_0_,
+        user0_.image_path as image_pa3_5_0_,
+        user0_.last_name as last_nam4_5_0_,
+        user0_.password as password5_5_0_,
+        user0_.phone_number as phone_nu6_5_0_,
+        user0_.role as role7_5_0_ 
+    from
+        user user0_ 
+    where
+        user0_.email_address=?
+2021-08-26 00:30:26.188 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Billy@gmail.com]
+2021-08-26 00:30:26.188 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        user0_.email_address as email_ad1_5_0_,
+        user0_.first_name as first_na2_5_0_,
+        user0_.image_path as image_pa3_5_0_,
+        user0_.last_name as last_nam4_5_0_,
+        user0_.password as password5_5_0_,
+        user0_.phone_number as phone_nu6_5_0_,
+        user0_.role as role7_5_0_ 
+    from
+        user user0_ 
+    where
+        user0_.email_address=?
+2021-08-26 00:30:26.188 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [randomemail@yahoo.com]
+2021-08-26 00:30:26.189 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        user0_.email_address as email_ad1_5_0_,
+        user0_.first_name as first_na2_5_0_,
+        user0_.image_path as image_pa3_5_0_,
+        user0_.last_name as last_nam4_5_0_,
+        user0_.password as password5_5_0_,
+        user0_.phone_number as phone_nu6_5_0_,
+        user0_.role as role7_5_0_ 
+    from
+        user user0_ 
+    where
+        user0_.email_address=?
+2021-08-26 00:30:26.189 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [adiner@asu.edu]
+2021-08-26 00:30:26.190  INFO 14848 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Users Added****
+2021-08-26 00:30:26.190  INFO 14848 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Adding Vendors****
+2021-08-26 00:30:26.192 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        vendor0_.email_address as email_ad1_6_1_,
+        vendor0_.first_name as first_na2_6_1_,
+        vendor0_.image_path as image_pa3_6_1_,
+        vendor0_.last_name as last_nam4_6_1_,
+        vendor0_.money_earned as money_ea5_6_1_,
+        vendor0_.password as password6_6_1_,
+        vendor0_.phone_number as phone_nu7_6_1_,
+        productlis1_.vendor_email_address as vendor_e8_4_3_,
+        productlis1_.productid as producti1_4_3_,
+        productlis1_.productid as producti1_4_0_,
+        productlis1_.description as descript2_4_0_,
+        productlis1_.image_path as image_pa3_4_0_,
+        productlis1_.name as name4_4_0_,
+        productlis1_.price as price5_4_0_,
+        productlis1_.quantity_in_stock as quantity6_4_0_,
+        productlis1_.total_quantity as total_qu7_4_0_,
+        productlis1_.vendor_email_address as vendor_e8_4_0_ 
+    from
+        vendor vendor0_ 
+    left outer join
+        product productlis1_ 
+            on vendor0_.email_address=productlis1_.vendor_email_address 
+    where
+        vendor0_.email_address=?
+2021-08-26 00:30:26.192 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [gary@Zoofood.com]
+2021-08-26 00:30:26.206 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        vendor0_.email_address as email_ad1_6_1_,
+        vendor0_.first_name as first_na2_6_1_,
+        vendor0_.image_path as image_pa3_6_1_,
+        vendor0_.last_name as last_nam4_6_1_,
+        vendor0_.money_earned as money_ea5_6_1_,
+        vendor0_.password as password6_6_1_,
+        vendor0_.phone_number as phone_nu7_6_1_,
+        productlis1_.vendor_email_address as vendor_e8_4_3_,
+        productlis1_.productid as producti1_4_3_,
+        productlis1_.productid as producti1_4_0_,
+        productlis1_.description as descript2_4_0_,
+        productlis1_.image_path as image_pa3_4_0_,
+        productlis1_.name as name4_4_0_,
+        productlis1_.price as price5_4_0_,
+        productlis1_.quantity_in_stock as quantity6_4_0_,
+        productlis1_.total_quantity as total_qu7_4_0_,
+        productlis1_.vendor_email_address as vendor_e8_4_0_ 
+    from
+        vendor vendor0_ 
+    left outer join
+        product productlis1_ 
+            on vendor0_.email_address=productlis1_.vendor_email_address 
+    where
+        vendor0_.email_address=?
+2021-08-26 00:30:26.206 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [nancy@gmail.com]
+2021-08-26 00:30:26.207 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        vendor0_.email_address as email_ad1_6_1_,
+        vendor0_.first_name as first_na2_6_1_,
+        vendor0_.image_path as image_pa3_6_1_,
+        vendor0_.last_name as last_nam4_6_1_,
+        vendor0_.money_earned as money_ea5_6_1_,
+        vendor0_.password as password6_6_1_,
+        vendor0_.phone_number as phone_nu7_6_1_,
+        productlis1_.vendor_email_address as vendor_e8_4_3_,
+        productlis1_.productid as producti1_4_3_,
+        productlis1_.productid as producti1_4_0_,
+        productlis1_.description as descript2_4_0_,
+        productlis1_.image_path as image_pa3_4_0_,
+        productlis1_.name as name4_4_0_,
+        productlis1_.price as price5_4_0_,
+        productlis1_.quantity_in_stock as quantity6_4_0_,
+        productlis1_.total_quantity as total_qu7_4_0_,
+        productlis1_.vendor_email_address as vendor_e8_4_0_ 
+    from
+        vendor vendor0_ 
+    left outer join
+        product productlis1_ 
+            on vendor0_.email_address=productlis1_.vendor_email_address 
+    where
+        vendor0_.email_address=?
+2021-08-26 00:30:26.207 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [jimminy@cricket.com]
+2021-08-26 00:30:26.208 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        vendor0_.email_address as email_ad1_6_1_,
+        vendor0_.first_name as first_na2_6_1_,
+        vendor0_.image_path as image_pa3_6_1_,
+        vendor0_.last_name as last_nam4_6_1_,
+        vendor0_.money_earned as money_ea5_6_1_,
+        vendor0_.password as password6_6_1_,
+        vendor0_.phone_number as phone_nu7_6_1_,
+        productlis1_.vendor_email_address as vendor_e8_4_3_,
+        productlis1_.productid as producti1_4_3_,
+        productlis1_.productid as producti1_4_0_,
+        productlis1_.description as descript2_4_0_,
+        productlis1_.image_path as image_pa3_4_0_,
+        productlis1_.name as name4_4_0_,
+        productlis1_.price as price5_4_0_,
+        productlis1_.quantity_in_stock as quantity6_4_0_,
+        productlis1_.total_quantity as total_qu7_4_0_,
+        productlis1_.vendor_email_address as vendor_e8_4_0_ 
+    from
+        vendor vendor0_ 
+    left outer join
+        product productlis1_ 
+            on vendor0_.email_address=productlis1_.vendor_email_address 
+    where
+        vendor0_.email_address=?
+2021-08-26 00:30:26.208 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [alice@wonderland.com]
+2021-08-26 00:30:26.208  INFO 14848 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Vendors Added****
+2021-08-26 00:30:26.208  INFO 14848 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Adding Authorization Groups****
+2021-08-26 00:30:26.221 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        user
+        (first_name, image_path, last_name, password, phone_number, role, email_address) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2021-08-26 00:30:26.221 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Andrew]
+2021-08-26 00:30:26.221 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [defaultprofile.jpg]
+2021-08-26 00:30:26.221 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Diner]
+2021-08-26 00:30:26.221 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [password]
+2021-08-26 00:30:26.221 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [4802986038]
+2021-08-26 00:30:26.221 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [null]
+2021-08-26 00:30:26.221 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-26 00:30:26.222 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        user
+        (first_name, image_path, last_name, password, phone_number, role, email_address) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2021-08-26 00:30:26.223 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [David]
+2021-08-26 00:30:26.223 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [defaultprofile.jpg]
+2021-08-26 00:30:26.223 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Diner]
+2021-08-26 00:30:26.223 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [password]
+2021-08-26 00:30:26.223 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [4802986048]
+2021-08-26 00:30:26.223 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [null]
+2021-08-26 00:30:26.223 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [david@gmail.com]
+2021-08-26 00:30:26.223 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        user
+        (first_name, image_path, last_name, password, phone_number, role, email_address) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2021-08-26 00:30:26.223 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Billy]
+2021-08-26 00:30:26.223 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [defaultprofile.jpg]
+2021-08-26 00:30:26.224 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Thorton]
+2021-08-26 00:30:26.224 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv.]
+2021-08-26 00:30:26.224 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [7538983043]
+2021-08-26 00:30:26.224 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [null]
+2021-08-26 00:30:26.224 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [Billy@gmail.com]
+2021-08-26 00:30:26.224 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        user
+        (first_name, image_path, last_name, password, phone_number, role, email_address) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2021-08-26 00:30:26.224 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Random]
+2021-08-26 00:30:26.224 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [webcamup.png]
+2021-08-26 00:30:26.225 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Person]
+2021-08-26 00:30:26.225 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [password]
+2021-08-26 00:30:26.225 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [1234567890]
+2021-08-26 00:30:26.225 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [null]
+2021-08-26 00:30:26.225 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [randomemail@yahoo.com]
+2021-08-26 00:30:26.225 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        user
+        (first_name, image_path, last_name, password, phone_number, role, email_address) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2021-08-26 00:30:26.225 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Andrew]
+2021-08-26 00:30:26.225 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [defaultprofile.jpg]
+2021-08-26 00:30:26.225 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Diner]
+2021-08-26 00:30:26.225 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [password]
+2021-08-26 00:30:26.225 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [4802986038]
+2021-08-26 00:30:26.225 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [null]
+2021-08-26 00:30:26.226 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [adiner@asu.edu]
+2021-08-26 00:30:26.226 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        vendor
+        (first_name, image_path, last_name, money_earned, password, phone_number, email_address) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2021-08-26 00:30:26.226 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Gary]
+2021-08-26 00:30:26.226 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [defaultprofile.jpg]
+2021-08-26 00:30:26.226 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Diner]
+2021-08-26 00:30:26.226 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [DOUBLE] - [0.0]
+2021-08-26 00:30:26.227 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [password]
+2021-08-26 00:30:26.227 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [7608352012]
+2021-08-26 00:30:26.227 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [gary@Zoofood.com]
+2021-08-26 00:30:26.227 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        vendor
+        (first_name, image_path, last_name, money_earned, password, phone_number, email_address) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2021-08-26 00:30:26.227 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Nancy]
+2021-08-26 00:30:26.227 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [defaultprofile.jpg]
+2021-08-26 00:30:26.228 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Diner]
+2021-08-26 00:30:26.228 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [DOUBLE] - [0.0]
+2021-08-26 00:30:26.228 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [password]
+2021-08-26 00:30:26.228 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [8385234021]
+2021-08-26 00:30:26.228 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [nancy@gmail.com]
+2021-08-26 00:30:26.228 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        vendor
+        (first_name, image_path, last_name, money_earned, password, phone_number, email_address) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2021-08-26 00:30:26.228 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Jimminy]
+2021-08-26 00:30:26.228 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [defaultprofile.jpg]
+2021-08-26 00:30:26.228 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Cricket]
+2021-08-26 00:30:26.229 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [DOUBLE] - [0.0]
+2021-08-26 00:30:26.229 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [password]
+2021-08-26 00:30:26.229 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [1234567890]
+2021-08-26 00:30:26.229 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [jimminy@cricket.com]
+2021-08-26 00:30:26.229 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        vendor
+        (first_name, image_path, last_name, money_earned, password, phone_number, email_address) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2021-08-26 00:30:26.229 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Alice]
+2021-08-26 00:30:26.229 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [defaultprofile.jpg]
+2021-08-26 00:30:26.229 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Wonderland]
+2021-08-26 00:30:26.229 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [DOUBLE] - [0.0]
+2021-08-26 00:30:26.229 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [password]
+2021-08-26 00:30:26.229 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [1234567890]
+2021-08-26 00:30:26.229 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [alice@wonderland.com]
+2021-08-26 00:30:26.230 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        auth_group
+        (a_auth_group, a_username) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.230 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_ADMIN]
+2021-08-26 00:30:26.230 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-26 00:30:26.244 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        auth_group
+        (a_auth_group, a_username) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.245 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_USER]
+2021-08-26 00:30:26.245 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-26 00:30:26.245 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        auth_group
+        (a_auth_group, a_username) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.245 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [WRITE]
+2021-08-26 00:30:26.246 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-26 00:30:26.246 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        auth_group
+        (a_auth_group, a_username) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.246 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_ADMIN]
+2021-08-26 00:30:26.246 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [gary@Zoofood@.com]
+2021-08-26 00:30:26.247 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        auth_group
+        (a_auth_group, a_username) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.247 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_USER]
+2021-08-26 00:30:26.247 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [gary@Zoofood@.com]
+2021-08-26 00:30:26.247  INFO 14848 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Authorization Groups Added****
+2021-08-26 00:30:26.247  INFO 14848 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Adding Products****
+2021-08-26 00:30:26.247  INFO 14848 --- [restartedMain] org.perscholas.AppStartupRunner          : ****Finished Adding Products****
+2021-08-26 00:30:26.248 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        vendor_.email_address,
+        vendor_.first_name as first_na2_6_,
+        vendor_.image_path as image_pa3_6_,
+        vendor_.last_name as last_nam4_6_,
+        vendor_.money_earned as money_ea5_6_,
+        vendor_.password as password6_6_,
+        vendor_.phone_number as phone_nu7_6_ 
+    from
+        vendor vendor_ 
+    where
+        vendor_.email_address=?
+2021-08-26 00:30:26.249 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [nancy@gmail.com]
+2021-08-26 00:30:26.250 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_6_] : [VARCHAR]) - [Nancy]
+2021-08-26 00:30:26.250 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_6_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:26.250 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_6_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:26.250 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([money_ea5_6_] : [DOUBLE]) - [0.0]
+2021-08-26 00:30:26.250 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password6_6_] : [VARCHAR]) - [password]
+2021-08-26 00:30:26.250 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu7_6_] : [VARCHAR]) - [8385234021]
+2021-08-26 00:30:26.250 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        product
+        (description, image_path, name, price, quantity_in_stock, total_quantity, vendor_email_address) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2021-08-26 00:30:26.250 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Light fabric, sewn in France]
+2021-08-26 00:30:26.251 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [navy-blue-socks-daft-punk.jpg]
+2021-08-26 00:30:26.251 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Blue Socks]
+2021-08-26 00:30:26.251 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [DOUBLE] - [15.99]
+2021-08-26 00:30:26.251 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [INTEGER] - [39]
+2021-08-26 00:30:26.251 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [INTEGER] - [50]
+2021-08-26 00:30:26.251 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [nancy@gmail.com]
+2021-08-26 00:30:26.253 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        vendor_.email_address,
+        vendor_.first_name as first_na2_6_,
+        vendor_.image_path as image_pa3_6_,
+        vendor_.last_name as last_nam4_6_,
+        vendor_.money_earned as money_ea5_6_,
+        vendor_.password as password6_6_,
+        vendor_.phone_number as phone_nu7_6_ 
+    from
+        vendor vendor_ 
+    where
+        vendor_.email_address=?
+2021-08-26 00:30:26.253 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [gary@Zoofood.com]
+2021-08-26 00:30:26.253 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_6_] : [VARCHAR]) - [Gary]
+2021-08-26 00:30:26.253 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_6_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:26.253 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_6_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:26.253 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([money_ea5_6_] : [DOUBLE]) - [0.0]
+2021-08-26 00:30:26.253 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password6_6_] : [VARCHAR]) - [password]
+2021-08-26 00:30:26.254 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu7_6_] : [VARCHAR]) - [7608352012]
+2021-08-26 00:30:26.254 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        product
+        (description, image_path, name, price, quantity_in_stock, total_quantity, vendor_email_address) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2021-08-26 00:30:26.254 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Found in the Target Clearance Aisle]
+2021-08-26 00:30:26.254 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [defaultsocks.jpg]
+2021-08-26 00:30:26.254 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Basic White Socks]
+2021-08-26 00:30:26.254 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [DOUBLE] - [2.99]
+2021-08-26 00:30:26.254 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [INTEGER] - [88]
+2021-08-26 00:30:26.254 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [INTEGER] - [100]
+2021-08-26 00:30:26.254 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [gary@Zoofood.com]
+2021-08-26 00:30:26.255 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        product
+        (description, image_path, name, price, quantity_in_stock, total_quantity, vendor_email_address) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2021-08-26 00:30:26.255 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Comfortable red & green socks]
+2021-08-26 00:30:26.255 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [christmas.jpg]
+2021-08-26 00:30:26.255 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Christmas Socks]
+2021-08-26 00:30:26.255 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [DOUBLE] - [6.99]
+2021-08-26 00:30:26.255 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [INTEGER] - [32]
+2021-08-26 00:30:26.255 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [INTEGER] - [64]
+2021-08-26 00:30:26.255 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [nancy@gmail.com]
+2021-08-26 00:30:26.255  WARN 14848 --- [restartedMain] org.perscholas.AppStartupRunner          : Made it past product Save
+2021-08-26 00:30:26.256 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        user_.email_address,
+        user_.first_name as first_na2_5_,
+        user_.image_path as image_pa3_5_,
+        user_.last_name as last_nam4_5_,
+        user_.password as password5_5_,
+        user_.phone_number as phone_nu6_5_,
+        user_.role as role7_5_ 
+    from
+        user user_ 
+    where
+        user_.email_address=?
+2021-08-26 00:30:26.257 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-26 00:30:26.257 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_5_] : [VARCHAR]) - [Andrew]
+2021-08-26 00:30:26.257 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_5_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:26.257 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_5_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:26.257 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_5_] : [VARCHAR]) - [password]
+2021-08-26 00:30:26.257 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu6_5_] : [VARCHAR]) - [4802986038]
+2021-08-26 00:30:26.257 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role7_5_] : [VARCHAR]) - [null]
+2021-08-26 00:30:26.257 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        orders
+        (customer_email_address, total_price) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.257 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-26 00:30:26.257 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DOUBLE] - [0.0]
+2021-08-26 00:30:26.258 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        user_.email_address,
+        user_.first_name as first_na2_5_,
+        user_.image_path as image_pa3_5_,
+        user_.last_name as last_nam4_5_,
+        user_.password as password5_5_,
+        user_.phone_number as phone_nu6_5_,
+        user_.role as role7_5_ 
+    from
+        user user_ 
+    where
+        user_.email_address=?
+2021-08-26 00:30:26.259 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [david@gmail.com]
+2021-08-26 00:30:26.259 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_5_] : [VARCHAR]) - [David]
+2021-08-26 00:30:26.259 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_5_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:26.259 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_5_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:26.259 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_5_] : [VARCHAR]) - [password]
+2021-08-26 00:30:26.259 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu6_5_] : [VARCHAR]) - [4802986048]
+2021-08-26 00:30:26.259 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role7_5_] : [VARCHAR]) - [null]
+2021-08-26 00:30:26.259 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        orders
+        (customer_email_address, total_price) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.259 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [david@gmail.com]
+2021-08-26 00:30:26.259 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DOUBLE] - [0.0]
+2021-08-26 00:30:26.260 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        user_.email_address,
+        user_.first_name as first_na2_5_,
+        user_.image_path as image_pa3_5_,
+        user_.last_name as last_nam4_5_,
+        user_.password as password5_5_,
+        user_.phone_number as phone_nu6_5_,
+        user_.role as role7_5_ 
+    from
+        user user_ 
+    where
+        user_.email_address=?
+2021-08-26 00:30:26.260 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [adiner@asu.edu]
+2021-08-26 00:30:26.260 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_5_] : [VARCHAR]) - [Andrew]
+2021-08-26 00:30:26.260 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_5_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:26.260 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_5_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:26.260 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_5_] : [VARCHAR]) - [password]
+2021-08-26 00:30:26.260 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu6_5_] : [VARCHAR]) - [4802986038]
+2021-08-26 00:30:26.260 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role7_5_] : [VARCHAR]) - [null]
+2021-08-26 00:30:26.260 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        orders
+        (customer_email_address, total_price) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.260 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [adiner@asu.edu]
+2021-08-26 00:30:26.261 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DOUBLE] - [0.0]
+2021-08-26 00:30:26.261 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        orders
+        (customer_email_address, total_price) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.261 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-26 00:30:26.261 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DOUBLE] - [0.0]
+2021-08-26 00:30:26.262 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    select
+        user_.email_address,
+        user_.first_name as first_na2_5_,
+        user_.image_path as image_pa3_5_,
+        user_.last_name as last_nam4_5_,
+        user_.password as password5_5_,
+        user_.phone_number as phone_nu6_5_,
+        user_.role as role7_5_ 
+    from
+        user user_ 
+    where
+        user_.email_address=?
+2021-08-26 00:30:26.262 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [randomemail@yahoo.com]
+2021-08-26 00:30:26.262 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_5_] : [VARCHAR]) - [Random]
+2021-08-26 00:30:26.262 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_5_] : [VARCHAR]) - [webcamup.png]
+2021-08-26 00:30:26.262 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_5_] : [VARCHAR]) - [Person]
+2021-08-26 00:30:26.262 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_5_] : [VARCHAR]) - [password]
+2021-08-26 00:30:26.262 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu6_5_] : [VARCHAR]) - [1234567890]
+2021-08-26 00:30:26.262 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role7_5_] : [VARCHAR]) - [null]
+2021-08-26 00:30:26.262 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        orders
+        (customer_email_address, total_price) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.262 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [randomemail@yahoo.com]
+2021-08-26 00:30:26.262 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DOUBLE] - [0.0]
+2021-08-26 00:30:26.271 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        orders_product
+        (orderid, productid) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.272 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [1]
+2021-08-26 00:30:26.272 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [INTEGER] - [1]
+2021-08-26 00:30:26.276 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        orders_product
+        (orderid, productid) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.276 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [1]
+2021-08-26 00:30:26.276 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [INTEGER] - [3]
+2021-08-26 00:30:26.277 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        orders_product
+        (orderid, productid) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.277 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [2]
+2021-08-26 00:30:26.277 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [INTEGER] - [2]
+2021-08-26 00:30:26.277 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        orders_product
+        (orderid, productid) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.277 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [3]
+2021-08-26 00:30:26.277 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [INTEGER] - [2]
+2021-08-26 00:30:26.277 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        orders_product
+        (orderid, productid) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.277 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [3]
+2021-08-26 00:30:26.277 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [INTEGER] - [2]
+2021-08-26 00:30:26.278 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        orders_product
+        (orderid, productid) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.278 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [3]
+2021-08-26 00:30:26.278 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [INTEGER] - [2]
+2021-08-26 00:30:26.278 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        orders_product
+        (orderid, productid) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.278 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [4]
+2021-08-26 00:30:26.278 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [INTEGER] - [3]
+2021-08-26 00:30:26.278 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        orders_product
+        (orderid, productid) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.278 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [4]
+2021-08-26 00:30:26.278 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [INTEGER] - [3]
+2021-08-26 00:30:26.279 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        orders_product
+        (orderid, productid) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.279 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [4]
+2021-08-26 00:30:26.279 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [INTEGER] - [3]
+2021-08-26 00:30:26.279 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        orders_product
+        (orderid, productid) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.279 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [4]
+2021-08-26 00:30:26.279 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [INTEGER] - [3]
+2021-08-26 00:30:26.279 DEBUG 14848 --- [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        orders_product
+        (orderid, productid) 
+    values
+        (?, ?)
+2021-08-26 00:30:26.279 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [5]
+2021-08-26 00:30:26.279 TRACE 14848 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [INTEGER] - [1]
+2021-08-26 00:30:26.284  INFO 14848 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-08-26 00:30:32.211  INFO 14848 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-26 00:30:32.212  INFO 14848 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-26 00:30:32.213  INFO 14848 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-08-26 00:30:34.087  WARN 14848 --- [http-nio-8080-exec-2] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [150] milliseconds.
+2021-08-26 00:30:35.992 DEBUG 14848 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        user0_.email_address as email_ad1_5_,
+        user0_.first_name as first_na2_5_,
+        user0_.image_path as image_pa3_5_,
+        user0_.last_name as last_nam4_5_,
+        user0_.password as password5_5_,
+        user0_.phone_number as phone_nu6_5_,
+        user0_.role as role7_5_ 
+    from
+        user user0_
+2021-08-26 00:30:35.993 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_5_] : [VARCHAR]) - [adiner@asu.edu]
+2021-08-26 00:30:35.995 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_5_] : [VARCHAR]) - [Andrew]
+2021-08-26 00:30:35.995 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_5_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:35.995 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_5_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:35.995 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_5_] : [VARCHAR]) - [password]
+2021-08-26 00:30:35.995 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu6_5_] : [VARCHAR]) - [4802986038]
+2021-08-26 00:30:35.995 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role7_5_] : [VARCHAR]) - [null]
+2021-08-26 00:30:35.996 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_5_] : [VARCHAR]) - [andrewjdiner@gmail.com]
+2021-08-26 00:30:35.996 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_5_] : [VARCHAR]) - [Andrew]
+2021-08-26 00:30:35.996 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_5_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:35.996 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_5_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:35.996 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_5_] : [VARCHAR]) - [password]
+2021-08-26 00:30:35.996 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu6_5_] : [VARCHAR]) - [4802986038]
+2021-08-26 00:30:35.996 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role7_5_] : [VARCHAR]) - [null]
+2021-08-26 00:30:35.996 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_5_] : [VARCHAR]) - [Billy@gmail.com]
+2021-08-26 00:30:35.996 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_5_] : [VARCHAR]) - [Billy]
+2021-08-26 00:30:35.996 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_5_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:35.996 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_5_] : [VARCHAR]) - [Thorton]
+2021-08-26 00:30:35.996 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_5_] : [VARCHAR]) - [$2y$11$JcGGFLmi46mM4SKUGKSv8.2srUTueRcyxRoHfHSVK/voHjw9kEKv.]
+2021-08-26 00:30:35.996 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu6_5_] : [VARCHAR]) - [7538983043]
+2021-08-26 00:30:35.996 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role7_5_] : [VARCHAR]) - [null]
+2021-08-26 00:30:35.996 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_5_] : [VARCHAR]) - [david@gmail.com]
+2021-08-26 00:30:35.997 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_5_] : [VARCHAR]) - [David]
+2021-08-26 00:30:35.997 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_5_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:35.997 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_5_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:35.997 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_5_] : [VARCHAR]) - [password]
+2021-08-26 00:30:35.997 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu6_5_] : [VARCHAR]) - [4802986048]
+2021-08-26 00:30:35.997 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role7_5_] : [VARCHAR]) - [null]
+2021-08-26 00:30:35.997 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_5_] : [VARCHAR]) - [randomemail@yahoo.com]
+2021-08-26 00:30:35.997 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_5_] : [VARCHAR]) - [Random]
+2021-08-26 00:30:35.997 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_5_] : [VARCHAR]) - [webcamup.png]
+2021-08-26 00:30:35.997 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_5_] : [VARCHAR]) - [Person]
+2021-08-26 00:30:35.997 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_5_] : [VARCHAR]) - [password]
+2021-08-26 00:30:35.997 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu6_5_] : [VARCHAR]) - [1234567890]
+2021-08-26 00:30:35.997 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role7_5_] : [VARCHAR]) - [null]
+2021-08-26 00:30:35.998  WARN 14848 --- [http-nio-8080-exec-4] org.perscholas.services.UserServices     : [User(), User(), User(), User(), User()]
+2021-08-26 00:30:35.999  WARN 14848 --- [http-nio-8080-exec-4] o.perscholas.controllers.UserController  : Users: 5
+2021-08-26 00:30:37.715 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        orders0_.orderid as orderid1_2_,
+        orders0_.customer_email_address as customer3_2_,
+        orders0_.total_price as total_pr2_2_ 
+    from
+        orders orders0_
+2021-08-26 00:30:37.716 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_2_] : [INTEGER]) - [1]
+2021-08-26 00:30:37.716 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([customer3_2_] : [VARCHAR]) - [andrewjdiner@gmail.com]
+2021-08-26 00:30:37.717 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([total_pr2_2_] : [DOUBLE]) - [0.0]
+2021-08-26 00:30:37.717 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_2_] : [INTEGER]) - [2]
+2021-08-26 00:30:37.717 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([customer3_2_] : [VARCHAR]) - [david@gmail.com]
+2021-08-26 00:30:37.717 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([total_pr2_2_] : [DOUBLE]) - [0.0]
+2021-08-26 00:30:37.717 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_2_] : [INTEGER]) - [3]
+2021-08-26 00:30:37.717 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([customer3_2_] : [VARCHAR]) - [adiner@asu.edu]
+2021-08-26 00:30:37.717 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([total_pr2_2_] : [DOUBLE]) - [0.0]
+2021-08-26 00:30:37.717 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_2_] : [INTEGER]) - [4]
+2021-08-26 00:30:37.717 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([customer3_2_] : [VARCHAR]) - [andrewjdiner@gmail.com]
+2021-08-26 00:30:37.717 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([total_pr2_2_] : [DOUBLE]) - [0.0]
+2021-08-26 00:30:37.717 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_2_] : [INTEGER]) - [5]
+2021-08-26 00:30:37.717 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([customer3_2_] : [VARCHAR]) - [randomemail@yahoo.com]
+2021-08-26 00:30:37.718 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([total_pr2_2_] : [DOUBLE]) - [0.0]
+2021-08-26 00:30:37.718 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        user0_.email_address as email_ad1_5_0_,
+        user0_.first_name as first_na2_5_0_,
+        user0_.image_path as image_pa3_5_0_,
+        user0_.last_name as last_nam4_5_0_,
+        user0_.password as password5_5_0_,
+        user0_.phone_number as phone_nu6_5_0_,
+        user0_.role as role7_5_0_ 
+    from
+        user user0_ 
+    where
+        user0_.email_address=?
+2021-08-26 00:30:37.718 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-26 00:30:37.721 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_5_0_] : [VARCHAR]) - [Andrew]
+2021-08-26 00:30:37.721 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_5_0_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:37.721 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_5_0_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:37.721 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_5_0_] : [VARCHAR]) - [password]
+2021-08-26 00:30:37.721 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu6_5_0_] : [VARCHAR]) - [4802986038]
+2021-08-26 00:30:37.721 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role7_5_0_] : [VARCHAR]) - [null]
+2021-08-26 00:30:37.722 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        user0_.email_address as email_ad1_5_0_,
+        user0_.first_name as first_na2_5_0_,
+        user0_.image_path as image_pa3_5_0_,
+        user0_.last_name as last_nam4_5_0_,
+        user0_.password as password5_5_0_,
+        user0_.phone_number as phone_nu6_5_0_,
+        user0_.role as role7_5_0_ 
+    from
+        user user0_ 
+    where
+        user0_.email_address=?
+2021-08-26 00:30:37.722 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [david@gmail.com]
+2021-08-26 00:30:37.723 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_5_0_] : [VARCHAR]) - [David]
+2021-08-26 00:30:37.723 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_5_0_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:37.723 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_5_0_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:37.723 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_5_0_] : [VARCHAR]) - [password]
+2021-08-26 00:30:37.723 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu6_5_0_] : [VARCHAR]) - [4802986048]
+2021-08-26 00:30:37.723 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role7_5_0_] : [VARCHAR]) - [null]
+2021-08-26 00:30:37.723 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        user0_.email_address as email_ad1_5_0_,
+        user0_.first_name as first_na2_5_0_,
+        user0_.image_path as image_pa3_5_0_,
+        user0_.last_name as last_nam4_5_0_,
+        user0_.password as password5_5_0_,
+        user0_.phone_number as phone_nu6_5_0_,
+        user0_.role as role7_5_0_ 
+    from
+        user user0_ 
+    where
+        user0_.email_address=?
+2021-08-26 00:30:37.723 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [adiner@asu.edu]
+2021-08-26 00:30:37.724 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_5_0_] : [VARCHAR]) - [Andrew]
+2021-08-26 00:30:37.724 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_5_0_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:37.724 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_5_0_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:37.724 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_5_0_] : [VARCHAR]) - [password]
+2021-08-26 00:30:37.724 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu6_5_0_] : [VARCHAR]) - [4802986038]
+2021-08-26 00:30:37.724 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role7_5_0_] : [VARCHAR]) - [null]
+2021-08-26 00:30:37.724 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        user0_.email_address as email_ad1_5_0_,
+        user0_.first_name as first_na2_5_0_,
+        user0_.image_path as image_pa3_5_0_,
+        user0_.last_name as last_nam4_5_0_,
+        user0_.password as password5_5_0_,
+        user0_.phone_number as phone_nu6_5_0_,
+        user0_.role as role7_5_0_ 
+    from
+        user user0_ 
+    where
+        user0_.email_address=?
+2021-08-26 00:30:37.724 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [randomemail@yahoo.com]
+2021-08-26 00:30:37.724 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_5_0_] : [VARCHAR]) - [Random]
+2021-08-26 00:30:37.725 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_5_0_] : [VARCHAR]) - [webcamup.png]
+2021-08-26 00:30:37.725 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_5_0_] : [VARCHAR]) - [Person]
+2021-08-26 00:30:37.725 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_5_0_] : [VARCHAR]) - [password]
+2021-08-26 00:30:37.725 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu6_5_0_] : [VARCHAR]) - [1234567890]
+2021-08-26 00:30:37.725 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role7_5_0_] : [VARCHAR]) - [null]
+2021-08-26 00:30:37.726 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        productlis0_.orderid as orderid1_3_0_,
+        productlis0_.productid as producti2_3_0_,
+        product1_.productid as producti1_4_1_,
+        product1_.description as descript2_4_1_,
+        product1_.image_path as image_pa3_4_1_,
+        product1_.name as name4_4_1_,
+        product1_.price as price5_4_1_,
+        product1_.quantity_in_stock as quantity6_4_1_,
+        product1_.total_quantity as total_qu7_4_1_,
+        product1_.vendor_email_address as vendor_e8_4_1_,
+        vendor2_.email_address as email_ad1_6_2_,
+        vendor2_.first_name as first_na2_6_2_,
+        vendor2_.image_path as image_pa3_6_2_,
+        vendor2_.last_name as last_nam4_6_2_,
+        vendor2_.money_earned as money_ea5_6_2_,
+        vendor2_.password as password6_6_2_,
+        vendor2_.phone_number as phone_nu7_6_2_ 
+    from
+        orders_product productlis0_ 
+    inner join
+        product product1_ 
+            on productlis0_.productid=product1_.productid 
+    left outer join
+        vendor vendor2_ 
+            on product1_.vendor_email_address=vendor2_.email_address 
+    where
+        productlis0_.orderid=?
+2021-08-26 00:30:37.726 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [1]
+2021-08-26 00:30:37.727 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [1]
+2021-08-26 00:30:37.727 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:37.727 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([descript2_4_1_] : [VARCHAR]) - [Light fabric, sewn in France]
+2021-08-26 00:30:37.727 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_4_1_] : [VARCHAR]) - [navy-blue-socks-daft-punk.jpg]
+2021-08-26 00:30:37.727 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_4_1_] : [VARCHAR]) - [Blue Socks]
+2021-08-26 00:30:37.727 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([price5_4_1_] : [DOUBLE]) - [15.99]
+2021-08-26 00:30:37.727 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([quantity6_4_1_] : [INTEGER]) - [39]
+2021-08-26 00:30:37.727 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([total_qu7_4_1_] : [INTEGER]) - [50]
+2021-08-26 00:30:37.727 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([vendor_e8_4_1_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:37.728 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_6_2_] : [VARCHAR]) - [Nancy]
+2021-08-26 00:30:37.728 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_6_2_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:37.728 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_6_2_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:37.728 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([money_ea5_6_2_] : [DOUBLE]) - [0.0]
+2021-08-26 00:30:37.728 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password6_6_2_] : [VARCHAR]) - [password]
+2021-08-26 00:30:37.728 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu7_6_2_] : [VARCHAR]) - [8385234021]
+2021-08-26 00:30:37.728 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [1]
+2021-08-26 00:30:37.728 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [1]
+2021-08-26 00:30:37.728 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [3]
+2021-08-26 00:30:37.728 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:37.728 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([descript2_4_1_] : [VARCHAR]) - [Comfortable red & green socks]
+2021-08-26 00:30:37.728 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_4_1_] : [VARCHAR]) - [christmas.jpg]
+2021-08-26 00:30:37.728 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_4_1_] : [VARCHAR]) - [Christmas Socks]
+2021-08-26 00:30:37.729 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([price5_4_1_] : [DOUBLE]) - [6.99]
+2021-08-26 00:30:37.729 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([quantity6_4_1_] : [INTEGER]) - [32]
+2021-08-26 00:30:37.729 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([total_qu7_4_1_] : [INTEGER]) - [64]
+2021-08-26 00:30:37.729 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([vendor_e8_4_1_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:37.729 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [1]
+2021-08-26 00:30:37.729 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [3]
+2021-08-26 00:30:37.730 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        productlis0_.orderid as orderid1_3_0_,
+        productlis0_.productid as producti2_3_0_,
+        product1_.productid as producti1_4_1_,
+        product1_.description as descript2_4_1_,
+        product1_.image_path as image_pa3_4_1_,
+        product1_.name as name4_4_1_,
+        product1_.price as price5_4_1_,
+        product1_.quantity_in_stock as quantity6_4_1_,
+        product1_.total_quantity as total_qu7_4_1_,
+        product1_.vendor_email_address as vendor_e8_4_1_,
+        vendor2_.email_address as email_ad1_6_2_,
+        vendor2_.first_name as first_na2_6_2_,
+        vendor2_.image_path as image_pa3_6_2_,
+        vendor2_.last_name as last_nam4_6_2_,
+        vendor2_.money_earned as money_ea5_6_2_,
+        vendor2_.password as password6_6_2_,
+        vendor2_.phone_number as phone_nu7_6_2_ 
+    from
+        orders_product productlis0_ 
+    inner join
+        product product1_ 
+            on productlis0_.productid=product1_.productid 
+    left outer join
+        vendor vendor2_ 
+            on product1_.vendor_email_address=vendor2_.email_address 
+    where
+        productlis0_.orderid=?
+2021-08-26 00:30:37.730 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [2]
+2021-08-26 00:30:37.730 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [2]
+2021-08-26 00:30:37.731 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [gary@Zoofood.com]
+2021-08-26 00:30:37.731 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([descript2_4_1_] : [VARCHAR]) - [Found in the Target Clearance Aisle]
+2021-08-26 00:30:37.731 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_4_1_] : [VARCHAR]) - [defaultsocks.jpg]
+2021-08-26 00:30:37.731 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_4_1_] : [VARCHAR]) - [Basic White Socks]
+2021-08-26 00:30:37.731 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([price5_4_1_] : [DOUBLE]) - [2.99]
+2021-08-26 00:30:37.731 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([quantity6_4_1_] : [INTEGER]) - [88]
+2021-08-26 00:30:37.731 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([total_qu7_4_1_] : [INTEGER]) - [100]
+2021-08-26 00:30:37.731 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([vendor_e8_4_1_] : [VARCHAR]) - [gary@Zoofood.com]
+2021-08-26 00:30:37.731 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_6_2_] : [VARCHAR]) - [Gary]
+2021-08-26 00:30:37.731 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_6_2_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:37.731 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_6_2_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:37.731 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([money_ea5_6_2_] : [DOUBLE]) - [0.0]
+2021-08-26 00:30:37.731 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password6_6_2_] : [VARCHAR]) - [password]
+2021-08-26 00:30:37.731 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu7_6_2_] : [VARCHAR]) - [7608352012]
+2021-08-26 00:30:37.731 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [2]
+2021-08-26 00:30:37.731 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [2]
+2021-08-26 00:30:37.731 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        productlis0_.orderid as orderid1_3_0_,
+        productlis0_.productid as producti2_3_0_,
+        product1_.productid as producti1_4_1_,
+        product1_.description as descript2_4_1_,
+        product1_.image_path as image_pa3_4_1_,
+        product1_.name as name4_4_1_,
+        product1_.price as price5_4_1_,
+        product1_.quantity_in_stock as quantity6_4_1_,
+        product1_.total_quantity as total_qu7_4_1_,
+        product1_.vendor_email_address as vendor_e8_4_1_,
+        vendor2_.email_address as email_ad1_6_2_,
+        vendor2_.first_name as first_na2_6_2_,
+        vendor2_.image_path as image_pa3_6_2_,
+        vendor2_.last_name as last_nam4_6_2_,
+        vendor2_.money_earned as money_ea5_6_2_,
+        vendor2_.password as password6_6_2_,
+        vendor2_.phone_number as phone_nu7_6_2_ 
+    from
+        orders_product productlis0_ 
+    inner join
+        product product1_ 
+            on productlis0_.productid=product1_.productid 
+    left outer join
+        vendor vendor2_ 
+            on product1_.vendor_email_address=vendor2_.email_address 
+    where
+        productlis0_.orderid=?
+2021-08-26 00:30:37.731 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [3]
+2021-08-26 00:30:37.732 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [2]
+2021-08-26 00:30:37.732 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [gary@Zoofood.com]
+2021-08-26 00:30:37.732 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [3]
+2021-08-26 00:30:37.732 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [2]
+2021-08-26 00:30:37.732 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [2]
+2021-08-26 00:30:37.732 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [gary@Zoofood.com]
+2021-08-26 00:30:37.732 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [3]
+2021-08-26 00:30:37.732 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [2]
+2021-08-26 00:30:37.732 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [2]
+2021-08-26 00:30:37.732 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [gary@Zoofood.com]
+2021-08-26 00:30:37.732 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [3]
+2021-08-26 00:30:37.732 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [2]
+2021-08-26 00:30:37.732 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        productlis0_.orderid as orderid1_3_0_,
+        productlis0_.productid as producti2_3_0_,
+        product1_.productid as producti1_4_1_,
+        product1_.description as descript2_4_1_,
+        product1_.image_path as image_pa3_4_1_,
+        product1_.name as name4_4_1_,
+        product1_.price as price5_4_1_,
+        product1_.quantity_in_stock as quantity6_4_1_,
+        product1_.total_quantity as total_qu7_4_1_,
+        product1_.vendor_email_address as vendor_e8_4_1_,
+        vendor2_.email_address as email_ad1_6_2_,
+        vendor2_.first_name as first_na2_6_2_,
+        vendor2_.image_path as image_pa3_6_2_,
+        vendor2_.last_name as last_nam4_6_2_,
+        vendor2_.money_earned as money_ea5_6_2_,
+        vendor2_.password as password6_6_2_,
+        vendor2_.phone_number as phone_nu7_6_2_ 
+    from
+        orders_product productlis0_ 
+    inner join
+        product product1_ 
+            on productlis0_.productid=product1_.productid 
+    left outer join
+        vendor vendor2_ 
+            on product1_.vendor_email_address=vendor2_.email_address 
+    where
+        productlis0_.orderid=?
+2021-08-26 00:30:37.733 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [4]
+2021-08-26 00:30:37.733 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [3]
+2021-08-26 00:30:37.733 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:37.733 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [4]
+2021-08-26 00:30:37.733 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [3]
+2021-08-26 00:30:37.733 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [3]
+2021-08-26 00:30:37.733 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:37.733 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [4]
+2021-08-26 00:30:37.733 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [3]
+2021-08-26 00:30:37.733 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [3]
+2021-08-26 00:30:37.733 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:37.733 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [4]
+2021-08-26 00:30:37.733 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [3]
+2021-08-26 00:30:37.734 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [3]
+2021-08-26 00:30:37.734 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:37.734 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [4]
+2021-08-26 00:30:37.734 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [3]
+2021-08-26 00:30:37.734 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        productlis0_.orderid as orderid1_3_0_,
+        productlis0_.productid as producti2_3_0_,
+        product1_.productid as producti1_4_1_,
+        product1_.description as descript2_4_1_,
+        product1_.image_path as image_pa3_4_1_,
+        product1_.name as name4_4_1_,
+        product1_.price as price5_4_1_,
+        product1_.quantity_in_stock as quantity6_4_1_,
+        product1_.total_quantity as total_qu7_4_1_,
+        product1_.vendor_email_address as vendor_e8_4_1_,
+        vendor2_.email_address as email_ad1_6_2_,
+        vendor2_.first_name as first_na2_6_2_,
+        vendor2_.image_path as image_pa3_6_2_,
+        vendor2_.last_name as last_nam4_6_2_,
+        vendor2_.money_earned as money_ea5_6_2_,
+        vendor2_.password as password6_6_2_,
+        vendor2_.phone_number as phone_nu7_6_2_ 
+    from
+        orders_product productlis0_ 
+    inner join
+        product product1_ 
+            on productlis0_.productid=product1_.productid 
+    left outer join
+        vendor vendor2_ 
+            on product1_.vendor_email_address=vendor2_.email_address 
+    where
+        productlis0_.orderid=?
+2021-08-26 00:30:37.734 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [5]
+2021-08-26 00:30:37.734 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [1]
+2021-08-26 00:30:37.734 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:37.734 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [5]
+2021-08-26 00:30:37.734 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [1]
+2021-08-26 00:30:37.734  WARN 14848 --- [http-nio-8080-exec-6] org.perscholas.services.OrderServices    : [Orders(), Orders(), Orders(), Orders(), Orders()]
+2021-08-26 00:30:37.736 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    update
+        orders 
+    set
+        customer_email_address=?,
+        total_price=? 
+    where
+        orderid=?
+2021-08-26 00:30:37.736 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-26 00:30:37.736 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DOUBLE] - [22.98]
+2021-08-26 00:30:37.736 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [INTEGER] - [1]
+2021-08-26 00:30:37.737 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    update
+        orders 
+    set
+        customer_email_address=?,
+        total_price=? 
+    where
+        orderid=?
+2021-08-26 00:30:37.738 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [david@gmail.com]
+2021-08-26 00:30:37.738 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DOUBLE] - [2.99]
+2021-08-26 00:30:37.738 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [INTEGER] - [2]
+2021-08-26 00:30:37.738 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    update
+        orders 
+    set
+        customer_email_address=?,
+        total_price=? 
+    where
+        orderid=?
+2021-08-26 00:30:37.738 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [adiner@asu.edu]
+2021-08-26 00:30:37.738 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DOUBLE] - [8.97]
+2021-08-26 00:30:37.738 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [INTEGER] - [3]
+2021-08-26 00:30:37.738 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    update
+        orders 
+    set
+        customer_email_address=?,
+        total_price=? 
+    where
+        orderid=?
+2021-08-26 00:30:37.738 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-26 00:30:37.738 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DOUBLE] - [27.96]
+2021-08-26 00:30:37.738 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [INTEGER] - [4]
+2021-08-26 00:30:37.739 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    update
+        orders 
+    set
+        customer_email_address=?,
+        total_price=? 
+    where
+        orderid=?
+2021-08-26 00:30:37.739 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [randomemail@yahoo.com]
+2021-08-26 00:30:37.739 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DOUBLE] - [15.99]
+2021-08-26 00:30:37.739 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [INTEGER] - [5]
+2021-08-26 00:30:37.741  WARN 14848 --- [http-nio-8080-exec-6] o.p.controllers.OrderController          : Orders: 5
+2021-08-26 00:30:39.179 DEBUG 14848 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        vendor0_.email_address as email_ad1_6_,
+        vendor0_.first_name as first_na2_6_,
+        vendor0_.image_path as image_pa3_6_,
+        vendor0_.last_name as last_nam4_6_,
+        vendor0_.money_earned as money_ea5_6_,
+        vendor0_.password as password6_6_,
+        vendor0_.phone_number as phone_nu7_6_ 
+    from
+        vendor vendor0_
+2021-08-26 00:30:39.179 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_] : [VARCHAR]) - [alice@wonderland.com]
+2021-08-26 00:30:39.179 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_6_] : [VARCHAR]) - [Alice]
+2021-08-26 00:30:39.179 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_6_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:39.179 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_6_] : [VARCHAR]) - [Wonderland]
+2021-08-26 00:30:39.179 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([money_ea5_6_] : [DOUBLE]) - [0.0]
+2021-08-26 00:30:39.179 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password6_6_] : [VARCHAR]) - [password]
+2021-08-26 00:30:39.179 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu7_6_] : [VARCHAR]) - [1234567890]
+2021-08-26 00:30:39.179 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_] : [VARCHAR]) - [gary@Zoofood.com]
+2021-08-26 00:30:39.179 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_6_] : [VARCHAR]) - [Gary]
+2021-08-26 00:30:39.180 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_6_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:39.180 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_6_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:39.180 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([money_ea5_6_] : [DOUBLE]) - [0.0]
+2021-08-26 00:30:39.180 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password6_6_] : [VARCHAR]) - [password]
+2021-08-26 00:30:39.180 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu7_6_] : [VARCHAR]) - [7608352012]
+2021-08-26 00:30:39.180 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_] : [VARCHAR]) - [jimminy@cricket.com]
+2021-08-26 00:30:39.180 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_6_] : [VARCHAR]) - [Jimminy]
+2021-08-26 00:30:39.180 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_6_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:39.180 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_6_] : [VARCHAR]) - [Cricket]
+2021-08-26 00:30:39.180 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([money_ea5_6_] : [DOUBLE]) - [0.0]
+2021-08-26 00:30:39.180 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password6_6_] : [VARCHAR]) - [password]
+2021-08-26 00:30:39.180 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu7_6_] : [VARCHAR]) - [1234567890]
+2021-08-26 00:30:39.180 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:39.180 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_6_] : [VARCHAR]) - [Nancy]
+2021-08-26 00:30:39.180 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_6_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:39.180 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_6_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:39.180 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([money_ea5_6_] : [DOUBLE]) - [0.0]
+2021-08-26 00:30:39.180 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password6_6_] : [VARCHAR]) - [password]
+2021-08-26 00:30:39.180 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu7_6_] : [VARCHAR]) - [8385234021]
+2021-08-26 00:30:39.191 DEBUG 14848 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        productlis0_.vendor_email_address as vendor_e8_4_0_,
+        productlis0_.productid as producti1_4_0_,
+        productlis0_.productid as producti1_4_1_,
+        productlis0_.description as descript2_4_1_,
+        productlis0_.image_path as image_pa3_4_1_,
+        productlis0_.name as name4_4_1_,
+        productlis0_.price as price5_4_1_,
+        productlis0_.quantity_in_stock as quantity6_4_1_,
+        productlis0_.total_quantity as total_qu7_4_1_,
+        productlis0_.vendor_email_address as vendor_e8_4_1_ 
+    from
+        product productlis0_ 
+    where
+        productlis0_.vendor_email_address=?
+2021-08-26 00:30:39.191 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [alice@wonderland.com]
+2021-08-26 00:30:39.191 DEBUG 14848 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        productlis0_.vendor_email_address as vendor_e8_4_0_,
+        productlis0_.productid as producti1_4_0_,
+        productlis0_.productid as producti1_4_1_,
+        productlis0_.description as descript2_4_1_,
+        productlis0_.image_path as image_pa3_4_1_,
+        productlis0_.name as name4_4_1_,
+        productlis0_.price as price5_4_1_,
+        productlis0_.quantity_in_stock as quantity6_4_1_,
+        productlis0_.total_quantity as total_qu7_4_1_,
+        productlis0_.vendor_email_address as vendor_e8_4_1_ 
+    from
+        product productlis0_ 
+    where
+        productlis0_.vendor_email_address=?
+2021-08-26 00:30:39.192 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [gary@Zoofood.com]
+2021-08-26 00:30:39.192 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [2]
+2021-08-26 00:30:39.192 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([descript2_4_1_] : [VARCHAR]) - [Found in the Target Clearance Aisle]
+2021-08-26 00:30:39.192 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_4_1_] : [VARCHAR]) - [defaultsocks.jpg]
+2021-08-26 00:30:39.192 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_4_1_] : [VARCHAR]) - [Basic White Socks]
+2021-08-26 00:30:39.192 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([price5_4_1_] : [DOUBLE]) - [2.99]
+2021-08-26 00:30:39.192 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([quantity6_4_1_] : [INTEGER]) - [88]
+2021-08-26 00:30:39.192 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([total_qu7_4_1_] : [INTEGER]) - [100]
+2021-08-26 00:30:39.192 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([vendor_e8_4_1_] : [VARCHAR]) - [gary@Zoofood.com]
+2021-08-26 00:30:39.192 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([vendor_e8_4_0_] : [VARCHAR]) - [gary@Zoofood.com]
+2021-08-26 00:30:39.192 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_0_] : [INTEGER]) - [2]
+2021-08-26 00:30:39.193 DEBUG 14848 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        productlis0_.vendor_email_address as vendor_e8_4_0_,
+        productlis0_.productid as producti1_4_0_,
+        productlis0_.productid as producti1_4_1_,
+        productlis0_.description as descript2_4_1_,
+        productlis0_.image_path as image_pa3_4_1_,
+        productlis0_.name as name4_4_1_,
+        productlis0_.price as price5_4_1_,
+        productlis0_.quantity_in_stock as quantity6_4_1_,
+        productlis0_.total_quantity as total_qu7_4_1_,
+        productlis0_.vendor_email_address as vendor_e8_4_1_ 
+    from
+        product productlis0_ 
+    where
+        productlis0_.vendor_email_address=?
+2021-08-26 00:30:39.193 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [jimminy@cricket.com]
+2021-08-26 00:30:39.193 DEBUG 14848 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        productlis0_.vendor_email_address as vendor_e8_4_0_,
+        productlis0_.productid as producti1_4_0_,
+        productlis0_.productid as producti1_4_1_,
+        productlis0_.description as descript2_4_1_,
+        productlis0_.image_path as image_pa3_4_1_,
+        productlis0_.name as name4_4_1_,
+        productlis0_.price as price5_4_1_,
+        productlis0_.quantity_in_stock as quantity6_4_1_,
+        productlis0_.total_quantity as total_qu7_4_1_,
+        productlis0_.vendor_email_address as vendor_e8_4_1_ 
+    from
+        product productlis0_ 
+    where
+        productlis0_.vendor_email_address=?
+2021-08-26 00:30:39.193 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [nancy@gmail.com]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [1]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([descript2_4_1_] : [VARCHAR]) - [Light fabric, sewn in France]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_4_1_] : [VARCHAR]) - [navy-blue-socks-daft-punk.jpg]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_4_1_] : [VARCHAR]) - [Blue Socks]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([price5_4_1_] : [DOUBLE]) - [15.99]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([quantity6_4_1_] : [INTEGER]) - [39]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([total_qu7_4_1_] : [INTEGER]) - [50]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([vendor_e8_4_1_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([vendor_e8_4_0_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_0_] : [INTEGER]) - [1]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [3]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([descript2_4_1_] : [VARCHAR]) - [Comfortable red & green socks]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_4_1_] : [VARCHAR]) - [christmas.jpg]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_4_1_] : [VARCHAR]) - [Christmas Socks]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([price5_4_1_] : [DOUBLE]) - [6.99]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([quantity6_4_1_] : [INTEGER]) - [32]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([total_qu7_4_1_] : [INTEGER]) - [64]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([vendor_e8_4_1_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([vendor_e8_4_0_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:39.194 TRACE 14848 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_0_] : [INTEGER]) - [3]
+2021-08-26 00:30:39.195  WARN 14848 --- [http-nio-8080-exec-4] org.perscholas.services.VendorServices   : [Vendor(emailAddress=alice@wonderland.com, firstName=Alice, lastName=Wonderland, phoneNumber=1234567890, password=password, imagePath=defaultprofile.jpg, moneyEarned=0.0, productList=[]), Vendor(emailAddress=gary@Zoofood.com, firstName=Gary, lastName=Diner, phoneNumber=7608352012, password=password, imagePath=defaultprofile.jpg, moneyEarned=0.0, productList=[Product()]), Vendor(emailAddress=jimminy@cricket.com, firstName=Jimminy, lastName=Cricket, phoneNumber=1234567890, password=password, imagePath=defaultprofile.jpg, moneyEarned=0.0, productList=[]), Vendor(emailAddress=nancy@gmail.com, firstName=Nancy, lastName=Diner, phoneNumber=8385234021, password=password, imagePath=defaultprofile.jpg, moneyEarned=0.0, productList=[Product(), Product()])]
+2021-08-26 00:30:39.196  WARN 14848 --- [http-nio-8080-exec-4] o.p.controllers.VendorController         : Vendors: 4
+2021-08-26 00:30:40.908 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        product0_.productid as producti1_4_,
+        product0_.description as descript2_4_,
+        product0_.image_path as image_pa3_4_,
+        product0_.name as name4_4_,
+        product0_.price as price5_4_,
+        product0_.quantity_in_stock as quantity6_4_,
+        product0_.total_quantity as total_qu7_4_,
+        product0_.vendor_email_address as vendor_e8_4_ 
+    from
+        product product0_
+2021-08-26 00:30:40.909 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_] : [INTEGER]) - [1]
+2021-08-26 00:30:40.909 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([descript2_4_] : [VARCHAR]) - [Light fabric, sewn in France]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_4_] : [VARCHAR]) - [navy-blue-socks-daft-punk.jpg]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_4_] : [VARCHAR]) - [Blue Socks]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([price5_4_] : [DOUBLE]) - [15.99]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([quantity6_4_] : [INTEGER]) - [39]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([total_qu7_4_] : [INTEGER]) - [50]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([vendor_e8_4_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_] : [INTEGER]) - [2]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([descript2_4_] : [VARCHAR]) - [Found in the Target Clearance Aisle]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_4_] : [VARCHAR]) - [defaultsocks.jpg]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_4_] : [VARCHAR]) - [Basic White Socks]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([price5_4_] : [DOUBLE]) - [2.99]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([quantity6_4_] : [INTEGER]) - [88]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([total_qu7_4_] : [INTEGER]) - [100]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([vendor_e8_4_] : [VARCHAR]) - [gary@Zoofood.com]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_] : [INTEGER]) - [3]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([descript2_4_] : [VARCHAR]) - [Comfortable red & green socks]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_4_] : [VARCHAR]) - [christmas.jpg]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_4_] : [VARCHAR]) - [Christmas Socks]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([price5_4_] : [DOUBLE]) - [6.99]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([quantity6_4_] : [INTEGER]) - [32]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([total_qu7_4_] : [INTEGER]) - [64]
+2021-08-26 00:30:40.910 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([vendor_e8_4_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:40.910 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        vendor0_.email_address as email_ad1_6_0_,
+        vendor0_.first_name as first_na2_6_0_,
+        vendor0_.image_path as image_pa3_6_0_,
+        vendor0_.last_name as last_nam4_6_0_,
+        vendor0_.money_earned as money_ea5_6_0_,
+        vendor0_.password as password6_6_0_,
+        vendor0_.phone_number as phone_nu7_6_0_ 
+    from
+        vendor vendor0_ 
+    where
+        vendor0_.email_address=?
+2021-08-26 00:30:40.911 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [nancy@gmail.com]
+2021-08-26 00:30:40.911 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_6_0_] : [VARCHAR]) - [Nancy]
+2021-08-26 00:30:40.911 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_6_0_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:40.911 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_6_0_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:40.911 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([money_ea5_6_0_] : [DOUBLE]) - [0.0]
+2021-08-26 00:30:40.911 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password6_6_0_] : [VARCHAR]) - [password]
+2021-08-26 00:30:40.911 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu7_6_0_] : [VARCHAR]) - [8385234021]
+2021-08-26 00:30:40.911 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        vendor0_.email_address as email_ad1_6_0_,
+        vendor0_.first_name as first_na2_6_0_,
+        vendor0_.image_path as image_pa3_6_0_,
+        vendor0_.last_name as last_nam4_6_0_,
+        vendor0_.money_earned as money_ea5_6_0_,
+        vendor0_.password as password6_6_0_,
+        vendor0_.phone_number as phone_nu7_6_0_ 
+    from
+        vendor vendor0_ 
+    where
+        vendor0_.email_address=?
+2021-08-26 00:30:40.911 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [gary@Zoofood.com]
+2021-08-26 00:30:40.912 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_6_0_] : [VARCHAR]) - [Gary]
+2021-08-26 00:30:40.912 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_6_0_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:40.912 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_6_0_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:40.912 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([money_ea5_6_0_] : [DOUBLE]) - [0.0]
+2021-08-26 00:30:40.912 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password6_6_0_] : [VARCHAR]) - [password]
+2021-08-26 00:30:40.912 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu7_6_0_] : [VARCHAR]) - [7608352012]
+2021-08-26 00:30:40.912  WARN 14848 --- [http-nio-8080-exec-6] org.perscholas.services.ProductServices  : [Product(), Product(), Product()]
+2021-08-26 00:30:40.913  WARN 14848 --- [http-nio-8080-exec-6] o.p.controllers.ProductController        : Products: 3
+2021-08-26 00:30:40.917 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        user0_.email_address as email_ad1_5_0_,
+        user0_.first_name as first_na2_5_0_,
+        user0_.image_path as image_pa3_5_0_,
+        user0_.last_name as last_nam4_5_0_,
+        user0_.password as password5_5_0_,
+        user0_.phone_number as phone_nu6_5_0_,
+        user0_.role as role7_5_0_ 
+    from
+        user user0_ 
+    where
+        user0_.email_address=?
+2021-08-26 00:30:40.918 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [adiner@asu.edu]
+2021-08-26 00:30:40.918 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_5_0_] : [VARCHAR]) - [Andrew]
+2021-08-26 00:30:40.918 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_5_0_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:40.918 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_5_0_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:40.918 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_5_0_] : [VARCHAR]) - [password]
+2021-08-26 00:30:40.918 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu6_5_0_] : [VARCHAR]) - [4802986038]
+2021-08-26 00:30:40.918 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role7_5_0_] : [VARCHAR]) - [null]
+2021-08-26 00:30:40.918  WARN 14848 --- [http-nio-8080-exec-6] org.perscholas.services.UserServices     : User()
+2021-08-26 00:30:40.919  WARN 14848 --- [http-nio-8080-exec-6] o.p.controllers.ProductController        : USER EMAIL: adiner@asu.edu
+2021-08-26 00:30:40.929 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        orders0_.orderid as orderid1_2_,
+        orders0_.customer_email_address as customer3_2_,
+        orders0_.total_price as total_pr2_2_ 
+    from
+        orders orders0_ 
+    where
+        orders0_.customer_email_address=?
+2021-08-26 00:30:40.929 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [adiner@asu.edu]
+2021-08-26 00:30:40.930 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_2_] : [INTEGER]) - [3]
+2021-08-26 00:30:40.930 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([customer3_2_] : [VARCHAR]) - [adiner@asu.edu]
+2021-08-26 00:30:40.930 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([total_pr2_2_] : [DOUBLE]) - [8.97]
+2021-08-26 00:30:40.930  WARN 14848 --- [http-nio-8080-exec-6] org.perscholas.services.OrderServices    : Orders()
+2021-08-26 00:30:40.931  WARN 14848 --- [http-nio-8080-exec-6] o.p.controllers.ProductController        : CURRENT ORDER Orders()
+2021-08-26 00:30:40.932 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        orders0_.orderid as orderid1_2_,
+        orders0_.customer_email_address as customer3_2_,
+        orders0_.total_price as total_pr2_2_ 
+    from
+        orders orders0_
+2021-08-26 00:30:40.932 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_2_] : [INTEGER]) - [1]
+2021-08-26 00:30:40.932 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([customer3_2_] : [VARCHAR]) - [andrewjdiner@gmail.com]
+2021-08-26 00:30:40.932 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([total_pr2_2_] : [DOUBLE]) - [22.98]
+2021-08-26 00:30:40.932 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_2_] : [INTEGER]) - [2]
+2021-08-26 00:30:40.932 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([customer3_2_] : [VARCHAR]) - [david@gmail.com]
+2021-08-26 00:30:40.932 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([total_pr2_2_] : [DOUBLE]) - [2.99]
+2021-08-26 00:30:40.932 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_2_] : [INTEGER]) - [3]
+2021-08-26 00:30:40.932 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_2_] : [INTEGER]) - [4]
+2021-08-26 00:30:40.933 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([customer3_2_] : [VARCHAR]) - [andrewjdiner@gmail.com]
+2021-08-26 00:30:40.933 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([total_pr2_2_] : [DOUBLE]) - [27.96]
+2021-08-26 00:30:40.933 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_2_] : [INTEGER]) - [5]
+2021-08-26 00:30:40.933 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([customer3_2_] : [VARCHAR]) - [randomemail@yahoo.com]
+2021-08-26 00:30:40.933 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([total_pr2_2_] : [DOUBLE]) - [15.99]
+2021-08-26 00:30:40.933 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        user0_.email_address as email_ad1_5_0_,
+        user0_.first_name as first_na2_5_0_,
+        user0_.image_path as image_pa3_5_0_,
+        user0_.last_name as last_nam4_5_0_,
+        user0_.password as password5_5_0_,
+        user0_.phone_number as phone_nu6_5_0_,
+        user0_.role as role7_5_0_ 
+    from
+        user user0_ 
+    where
+        user0_.email_address=?
+2021-08-26 00:30:40.933 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [andrewjdiner@gmail.com]
+2021-08-26 00:30:40.933 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_5_0_] : [VARCHAR]) - [Andrew]
+2021-08-26 00:30:40.933 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_5_0_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:40.933 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_5_0_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:40.933 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_5_0_] : [VARCHAR]) - [password]
+2021-08-26 00:30:40.933 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu6_5_0_] : [VARCHAR]) - [4802986038]
+2021-08-26 00:30:40.933 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role7_5_0_] : [VARCHAR]) - [null]
+2021-08-26 00:30:40.934 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        user0_.email_address as email_ad1_5_0_,
+        user0_.first_name as first_na2_5_0_,
+        user0_.image_path as image_pa3_5_0_,
+        user0_.last_name as last_nam4_5_0_,
+        user0_.password as password5_5_0_,
+        user0_.phone_number as phone_nu6_5_0_,
+        user0_.role as role7_5_0_ 
+    from
+        user user0_ 
+    where
+        user0_.email_address=?
+2021-08-26 00:30:40.934 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [david@gmail.com]
+2021-08-26 00:30:40.936 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_5_0_] : [VARCHAR]) - [David]
+2021-08-26 00:30:40.936 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_5_0_] : [VARCHAR]) - [defaultprofile.jpg]
+2021-08-26 00:30:40.936 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_5_0_] : [VARCHAR]) - [Diner]
+2021-08-26 00:30:40.936 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_5_0_] : [VARCHAR]) - [password]
+2021-08-26 00:30:40.936 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu6_5_0_] : [VARCHAR]) - [4802986048]
+2021-08-26 00:30:40.936 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role7_5_0_] : [VARCHAR]) - [null]
+2021-08-26 00:30:40.936 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        user0_.email_address as email_ad1_5_0_,
+        user0_.first_name as first_na2_5_0_,
+        user0_.image_path as image_pa3_5_0_,
+        user0_.last_name as last_nam4_5_0_,
+        user0_.password as password5_5_0_,
+        user0_.phone_number as phone_nu6_5_0_,
+        user0_.role as role7_5_0_ 
+    from
+        user user0_ 
+    where
+        user0_.email_address=?
+2021-08-26 00:30:40.936 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [randomemail@yahoo.com]
+2021-08-26 00:30:40.937 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([first_na2_5_0_] : [VARCHAR]) - [Random]
+2021-08-26 00:30:40.937 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([image_pa3_5_0_] : [VARCHAR]) - [webcamup.png]
+2021-08-26 00:30:40.937 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_nam4_5_0_] : [VARCHAR]) - [Person]
+2021-08-26 00:30:40.937 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_5_0_] : [VARCHAR]) - [password]
+2021-08-26 00:30:40.937 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([phone_nu6_5_0_] : [VARCHAR]) - [1234567890]
+2021-08-26 00:30:40.937 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role7_5_0_] : [VARCHAR]) - [null]
+2021-08-26 00:30:40.937 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        productlis0_.orderid as orderid1_3_0_,
+        productlis0_.productid as producti2_3_0_,
+        product1_.productid as producti1_4_1_,
+        product1_.description as descript2_4_1_,
+        product1_.image_path as image_pa3_4_1_,
+        product1_.name as name4_4_1_,
+        product1_.price as price5_4_1_,
+        product1_.quantity_in_stock as quantity6_4_1_,
+        product1_.total_quantity as total_qu7_4_1_,
+        product1_.vendor_email_address as vendor_e8_4_1_,
+        vendor2_.email_address as email_ad1_6_2_,
+        vendor2_.first_name as first_na2_6_2_,
+        vendor2_.image_path as image_pa3_6_2_,
+        vendor2_.last_name as last_nam4_6_2_,
+        vendor2_.money_earned as money_ea5_6_2_,
+        vendor2_.password as password6_6_2_,
+        vendor2_.phone_number as phone_nu7_6_2_ 
+    from
+        orders_product productlis0_ 
+    inner join
+        product product1_ 
+            on productlis0_.productid=product1_.productid 
+    left outer join
+        vendor vendor2_ 
+            on product1_.vendor_email_address=vendor2_.email_address 
+    where
+        productlis0_.orderid=?
+2021-08-26 00:30:40.937 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [1]
+2021-08-26 00:30:40.938 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [1]
+2021-08-26 00:30:40.938 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:40.938 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [1]
+2021-08-26 00:30:40.938 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [1]
+2021-08-26 00:30:40.938 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [3]
+2021-08-26 00:30:40.938 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:40.938 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [1]
+2021-08-26 00:30:40.938 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [3]
+2021-08-26 00:30:40.938 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        productlis0_.orderid as orderid1_3_0_,
+        productlis0_.productid as producti2_3_0_,
+        product1_.productid as producti1_4_1_,
+        product1_.description as descript2_4_1_,
+        product1_.image_path as image_pa3_4_1_,
+        product1_.name as name4_4_1_,
+        product1_.price as price5_4_1_,
+        product1_.quantity_in_stock as quantity6_4_1_,
+        product1_.total_quantity as total_qu7_4_1_,
+        product1_.vendor_email_address as vendor_e8_4_1_,
+        vendor2_.email_address as email_ad1_6_2_,
+        vendor2_.first_name as first_na2_6_2_,
+        vendor2_.image_path as image_pa3_6_2_,
+        vendor2_.last_name as last_nam4_6_2_,
+        vendor2_.money_earned as money_ea5_6_2_,
+        vendor2_.password as password6_6_2_,
+        vendor2_.phone_number as phone_nu7_6_2_ 
+    from
+        orders_product productlis0_ 
+    inner join
+        product product1_ 
+            on productlis0_.productid=product1_.productid 
+    left outer join
+        vendor vendor2_ 
+            on product1_.vendor_email_address=vendor2_.email_address 
+    where
+        productlis0_.orderid=?
+2021-08-26 00:30:40.938 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [2]
+2021-08-26 00:30:40.939 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [2]
+2021-08-26 00:30:40.939 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [gary@Zoofood.com]
+2021-08-26 00:30:40.939 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [2]
+2021-08-26 00:30:40.939 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [2]
+2021-08-26 00:30:40.939 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        productlis0_.orderid as orderid1_3_0_,
+        productlis0_.productid as producti2_3_0_,
+        product1_.productid as producti1_4_1_,
+        product1_.description as descript2_4_1_,
+        product1_.image_path as image_pa3_4_1_,
+        product1_.name as name4_4_1_,
+        product1_.price as price5_4_1_,
+        product1_.quantity_in_stock as quantity6_4_1_,
+        product1_.total_quantity as total_qu7_4_1_,
+        product1_.vendor_email_address as vendor_e8_4_1_,
+        vendor2_.email_address as email_ad1_6_2_,
+        vendor2_.first_name as first_na2_6_2_,
+        vendor2_.image_path as image_pa3_6_2_,
+        vendor2_.last_name as last_nam4_6_2_,
+        vendor2_.money_earned as money_ea5_6_2_,
+        vendor2_.password as password6_6_2_,
+        vendor2_.phone_number as phone_nu7_6_2_ 
+    from
+        orders_product productlis0_ 
+    inner join
+        product product1_ 
+            on productlis0_.productid=product1_.productid 
+    left outer join
+        vendor vendor2_ 
+            on product1_.vendor_email_address=vendor2_.email_address 
+    where
+        productlis0_.orderid=?
+2021-08-26 00:30:40.939 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [3]
+2021-08-26 00:30:40.939 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [2]
+2021-08-26 00:30:40.939 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [gary@Zoofood.com]
+2021-08-26 00:30:40.939 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [3]
+2021-08-26 00:30:40.939 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [2]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [2]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [gary@Zoofood.com]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [3]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [2]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [2]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [gary@Zoofood.com]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [3]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [2]
+2021-08-26 00:30:40.940 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        productlis0_.orderid as orderid1_3_0_,
+        productlis0_.productid as producti2_3_0_,
+        product1_.productid as producti1_4_1_,
+        product1_.description as descript2_4_1_,
+        product1_.image_path as image_pa3_4_1_,
+        product1_.name as name4_4_1_,
+        product1_.price as price5_4_1_,
+        product1_.quantity_in_stock as quantity6_4_1_,
+        product1_.total_quantity as total_qu7_4_1_,
+        product1_.vendor_email_address as vendor_e8_4_1_,
+        vendor2_.email_address as email_ad1_6_2_,
+        vendor2_.first_name as first_na2_6_2_,
+        vendor2_.image_path as image_pa3_6_2_,
+        vendor2_.last_name as last_nam4_6_2_,
+        vendor2_.money_earned as money_ea5_6_2_,
+        vendor2_.password as password6_6_2_,
+        vendor2_.phone_number as phone_nu7_6_2_ 
+    from
+        orders_product productlis0_ 
+    inner join
+        product product1_ 
+            on productlis0_.productid=product1_.productid 
+    left outer join
+        vendor vendor2_ 
+            on product1_.vendor_email_address=vendor2_.email_address 
+    where
+        productlis0_.orderid=?
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [4]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [3]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [4]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [3]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [3]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [4]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [3]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [3]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [4]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [3]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [3]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:40.940 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [4]
+2021-08-26 00:30:40.941 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [3]
+2021-08-26 00:30:40.941 DEBUG 14848 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        productlis0_.orderid as orderid1_3_0_,
+        productlis0_.productid as producti2_3_0_,
+        product1_.productid as producti1_4_1_,
+        product1_.description as descript2_4_1_,
+        product1_.image_path as image_pa3_4_1_,
+        product1_.name as name4_4_1_,
+        product1_.price as price5_4_1_,
+        product1_.quantity_in_stock as quantity6_4_1_,
+        product1_.total_quantity as total_qu7_4_1_,
+        product1_.vendor_email_address as vendor_e8_4_1_,
+        vendor2_.email_address as email_ad1_6_2_,
+        vendor2_.first_name as first_na2_6_2_,
+        vendor2_.image_path as image_pa3_6_2_,
+        vendor2_.last_name as last_nam4_6_2_,
+        vendor2_.money_earned as money_ea5_6_2_,
+        vendor2_.password as password6_6_2_,
+        vendor2_.phone_number as phone_nu7_6_2_ 
+    from
+        orders_product productlis0_ 
+    inner join
+        product product1_ 
+            on productlis0_.productid=product1_.productid 
+    left outer join
+        vendor vendor2_ 
+            on product1_.vendor_email_address=vendor2_.email_address 
+    where
+        productlis0_.orderid=?
+2021-08-26 00:30:40.941 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [5]
+2021-08-26 00:30:40.941 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti1_4_1_] : [INTEGER]) - [1]
+2021-08-26 00:30:40.941 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([email_ad1_6_2_] : [VARCHAR]) - [nancy@gmail.com]
+2021-08-26 00:30:40.941 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([orderid1_3_0_] : [INTEGER]) - [5]
+2021-08-26 00:30:40.941 TRACE 14848 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([producti2_3_0_] : [INTEGER]) - [1]
+2021-08-26 00:30:40.941  WARN 14848 --- [http-nio-8080-exec-6] org.perscholas.services.OrderServices    : [Orders(), Orders(), Orders(), Orders(), Orders()]
+2021-08-26 00:30:40.943  WARN 14848 --- [http-nio-8080-exec-6] o.p.controllers.ProductController        : AllOrders list initialized.
+2021-08-26 00:30:40.943  WARN 14848 --- [http-nio-8080-exec-6] o.p.controllers.ProductController        : Starting to Calculate all totals
+2021-08-26 00:30:40.944  WARN 14848 --- [http-nio-8080-exec-6] org.perscholas.services.OrderServices    : ID: 1
+2021-08-26 00:30:40.944  WARN 14848 --- [http-nio-8080-exec-6] org.perscholas.services.OrderServices    : Total Price: 22.98
+2021-08-26 00:30:40.945  WARN 14848 --- [http-nio-8080-exec-6] o.p.controllers.ProductController        : Starting to Calculate all totals
+2021-08-26 00:30:40.946  WARN 14848 --- [http-nio-8080-exec-6] org.perscholas.services.OrderServices    : ID: 2
+2021-08-26 00:30:40.946  WARN 14848 --- [http-nio-8080-exec-6] org.perscholas.services.OrderServices    : Total Price: 2.99
+2021-08-26 00:30:40.946  WARN 14848 --- [http-nio-8080-exec-6] o.p.controllers.ProductController        : Starting to Calculate all totals
+2021-08-26 00:30:40.947  WARN 14848 --- [http-nio-8080-exec-6] org.perscholas.services.OrderServices    : ID: 3
+2021-08-26 00:30:40.947  WARN 14848 --- [http-nio-8080-exec-6] org.perscholas.services.OrderServices    : Total Price: 8.97
+2021-08-26 00:30:40.947  WARN 14848 --- [http-nio-8080-exec-6] o.p.controllers.ProductController        : Starting to Calculate all totals
+2021-08-26 00:30:40.948  WARN 14848 --- [http-nio-8080-exec-6] org.perscholas.services.OrderServices    : ID: 4
+2021-08-26 00:30:40.948  WARN 14848 --- [http-nio-8080-exec-6] org.perscholas.services.OrderServices    : Total Price: 27.96
+2021-08-26 00:30:40.949  WARN 14848 --- [http-nio-8080-exec-6] o.p.controllers.ProductController        : Starting to Calculate all totals
+2021-08-26 00:30:40.950  WARN 14848 --- [http-nio-8080-exec-6] org.perscholas.services.OrderServices    : ID: 5
+2021-08-26 00:30:40.950  WARN 14848 --- [http-nio-8080-exec-6] org.perscholas.services.OrderServices    : Total Price: 15.99
